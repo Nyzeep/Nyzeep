@@ -25,4 +25,6 @@
 
 - 项目定位、许可证和技术标签的来源记录在 [nyzeep-public-portfolio.md](nyzeep-public-portfolio.md)。
 - 外部图像服务并不承载必要身份信息；即使某一张卡片不可用，正文项目链接仍完整可读。
+- 首屏 SVG 只保留易读的名称作为视觉锚点；身份、项目与技术信息均在 README 正文中可访问。
+- 当访客启用 `prefers-reduced-motion` 时，README 的 `<picture>` 选择不含 `<animate>` 的静态 SVG；动画版不承载必要信息。
 - 若精选项目、描述或技术栈变化，应同时更新 README、证据档和本决策记录。

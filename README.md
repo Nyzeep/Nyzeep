@@ -4,7 +4,14 @@
 -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal.svg" alt="Decorative animated Nyzeep terminal workbench" width="100%" />
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal-static.svg" />
+    <img src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal.svg" alt="Decorative Nyzeep terminal workbench" width="100%" />
+  </picture>
+</div>
+
+<div align="center">
+  <sub>动效仅作氛围呈现；项目与技术资料均在下方正文保留。</sub>
 </div>
 
 <div align="center">
