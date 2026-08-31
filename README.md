@@ -1,78 +1,83 @@
-<!-- Nyzeep's GitHub Profile README -->
+<!--
+  Nyzeep's GitHub profile.
+  Design principle: show verified work first, then supporting signals.
+-->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C897,45:00B894,100:6C5CE7&height=210&section=header&text=Nyzeep&fontSize=76&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Make%20every%20commit%20count.&descAlignY=60&descSize=18" alt="Nyzeep banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal.svg" alt="Decorative animated Nyzeep terminal workbench" width="100%" />
 </div>
 
 <div align="center">
-  <a href="https://github.com/Nyzeep">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00C897&center=true&vCenter=true&width=600&lines=Hello%2C+I'm+Nyzeep.;Building+ideas%2C+one+commit+at+a+time.;Code.+Create.+Keep+exploring." alt="Animated introduction" />
-  </a>
+  <a href="https://github.com/Nyzeep?tab=repositories"><img src="https://img.shields.io/badge/EXPLORE-PROJECTS-00C897?style=for-the-badge&logo=github&logoColor=white" alt="Explore Nyzeep's projects" /></a>
+  <a href="https://github.com/Nyzeep?tab=followers"><img src="https://img.shields.io/github/followers/Nyzeep?style=for-the-badge&logo=github&label=FOLLOW&color=6C5CE7" alt="Follow Nyzeep on GitHub" /></a>
 </div>
+
+## 👋 关于我
+
+> **构建 AI Agent 开发工具、打磨开发者体验，也持续做面向真实世界的软件实验。**
+
+<pre><code>focus     AI-agent developer tooling · DeepSeek Harness extensions
+build     Rust · TypeScript · Python · Vue
+approach  make it useful, then make it delightful</code></pre>
+
+- 正在积累 **AI Agent 工作平台** 与开发者工具的实践；
+- 喜欢把复杂能力做成更清楚、更顺手的产品体验；
+- 也会把技术带到社区与日常场景中，持续验证“软件能否真的帮上忙”。
+
+## 🧩 精选构建
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/Nyzeep/Halo-Studio">✦ Halo-Studio</a></h3>
+      <p>集成主流 AI Agent 的开发工作平台。</p>
+      <img src="https://img.shields.io/badge/Rust-DEA584?style=flat-square&logo=rust&logoColor=111111" alt="Rust" />
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/Nyzeep/dsh-material-file-icons">✦ dsh-material-file-icons</a></h3>
+      <p>为 DeepSeek Harness 更好侧边栏打造的 Material 风格文件与目录图标扩展。</p>
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+      <img src="https://img.shields.io/github/license/Nyzeep/dsh-material-file-icons?style=flat-square&label=License" alt="Repository license" />
+    </td>
+  </tr>
+</table>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Nyzeep&style=for-the-badge&color=00C897&label=PROFILE+VIEWS" alt="Profile views" />
-  <a href="https://github.com/Nyzeep?tab=followers"><img src="https://img.shields.io/github/followers/Nyzeep?style=for-the-badge&logo=github&label=FOLLOWERS&color=6C5CE7" alt="GitHub followers" /></a>
-  <img src="https://img.shields.io/badge/OPEN%20SOURCE-keep%20building-00C897?style=for-the-badge&logo=github" alt="Open source" />
+  <sub>也在探索 <a href="https://github.com/Nyzeep/Ecoscout">Ecoscout</a>（社区环卫检测）与 <a href="https://github.com/Nyzeep/LumiMate">LumiMate</a>（伙伴式软件实验）。</sub>
 </div>
 
-## 🌱 Hello, world!
-
-```text
-> curious mind
-> practical maker
-> always exploring the next interesting idea
-```
-
-I enjoy turning a spark of curiosity into something people can see, use, and share.
-This is my small corner of GitHub: a living collection of experiments, learning,
-and things worth building.
+## 🛠️ 常用工具链
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Focus-Creative%20coding-00C897?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Focus: Creative coding" />
-  <img src="https://img.shields.io/badge/Mindset-Learn%20in%20public-6C5CE7?style=flat-square&logo=bookstack&logoColor=white" alt="Mindset: Learn in public" />
-  <img src="https://img.shields.io/badge/Fuel-Curiosity-FDCB6E?style=flat-square&logo=coffeescript&logoColor=111111" alt="Fuel: Curiosity" />
+  <img src="https://skillicons.dev/icons?i=rust,ts,python,vue,html,css,js&theme=dark" alt="Rust, TypeScript, Python, Vue, HTML, CSS, and JavaScript" />
 </div>
 
-## 🧰 Things I build with
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,html,css,js,ts,python,react,nodejs&theme=dark" alt="Development tools and technologies" />
-</div>
-
-> The best toolkit is the one that helps an idea leave the notebook.
-
-## 📊 GitHub at a glance
+## 📡 开发信号
 
 <div align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=Nyzeep&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00C897&icon_color=00C897&text_color=C9D1D9&ring_color=6C5CE7" alt="Nyzeep GitHub statistics" />
-  <img height="170" src="https://streak-stats.demolab.com?user=Nyzeep&hide_border=true&background=0D1117&ring=6C5CE7&fire=FDCB6E&currStreakLabel=00C897&sideLabels=C9D1D9&dates=8B949E&currStreakNum=FFFFFF&sideNums=FFFFFF" alt="Nyzeep contribution streak" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nyzeep&layout=compact&hide_border=true&bg_color=0D1117&title_color=00C897&text_color=C9D1D9" alt="Nyzeep's most used languages" />
 </div>
 
-<div align="center">
-  <img height="155" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nyzeep&layout=compact&hide_border=true&bg_color=0D1117&title_color=00C897&text_color=C9D1D9" alt="Most used languages" />
-</div>
+<div align="center"><sub>语言卡反映公开代码的分布，不代表熟练度。</sub></div>
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Nyzeep&bg_color=0D1117&color=C9D1D9&line=00C897&point=FDCB6E&area=true&hide_border=true" alt="Nyzeep contribution activity graph" width="95%" />
-</div>
-
-## 🐍 My contribution garden, but make it alive
+## 🐍 绿色贡献花园
 
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nyzeep/Nyzeep/output/github-contribution-grid-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Nyzeep/Nyzeep/output/github-contribution-grid-snake.svg" />
-    <img alt="Green snake travelling across Nyzeep's GitHub contribution grid" src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/output/github-contribution-grid-snake.svg" width="100%" />
+    <img alt="A green snake travelling across Nyzeep's GitHub contribution grid" src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/output/github-contribution-grid-snake.svg" width="100%" />
   </picture>
 </div>
 
-<div align="center"><sub>The garden changes with every contribution. The snake follows the green trail. 🟩</sub></div>
+<div align="center">
+  <sub>这片绿墙计划每日刷新；GitHub Actions 在高负载时可能延迟。🟩</sub>
+</div>
 
-## ✨ A tiny note to future me
-
-> Keep shipping small things. They have a habit of becoming meaningful.
+---
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,55:00B894,100:00C897&height=110&section=footer" alt="Footer wave" width="100%" />
+  <sub>Open source journal · build with curiosity · <a href="https://github.com/Nyzeep">say hello on GitHub</a></sub>
 </div>

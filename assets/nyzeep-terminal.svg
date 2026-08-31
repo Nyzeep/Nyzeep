@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Nyzeep animated developer workbench</title>
+  <desc id="desc">Decorative neon terminal workbench. Profile details appear in surrounding text.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#10232a"/>
+      <stop offset="100%" stop-color="#1b1633"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00c897"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#8b949e" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>@media (prefers-reduced-motion: reduce) { animate, animateTransform { display: none; } }</style>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#background)"/>
+  <rect width="1200" height="320" rx="24" fill="url(#grid)"/>
+  <circle cx="1082" cy="48" r="100" fill="#8b5cf6" opacity=".10"><animate attributeName="r" values="100;122;100" dur="5s" repeatCount="indefinite"/></circle>
+  <circle cx="96" cy="298" r="110" fill="#00c897" opacity=".08"><animate attributeName="r" values="110;136;110" dur="6s" repeatCount="indefinite"/></circle>
+  <path d="M0 266 C230 224 370 306 552 259 S888 222 1200 276" fill="none" stroke="url(#accent)" stroke-opacity=".42" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="0 1800;900 900;0 1800" dur="6s" repeatCount="indefinite"/>
+  </path>
+  <g transform="translate(56 46)">
+    <rect width="654" height="190" rx="16" fill="#0d1117" fill-opacity=".80" stroke="#30363d"/>
+    <path d="M0 48 H654" stroke="#30363d"/>
+    <circle cx="28" cy="24" r="7" fill="#ff6b6b"/><circle cx="52" cy="24" r="7" fill="#feca57"/><circle cx="76" cy="24" r="7" fill="#1dd1a1"/>
+    <text x="34" y="112" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="44" font-weight="700" letter-spacing="3">NYZEEP</text>
+    <text x="36" y="148" fill="#00c897" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="20">build · explore · share</text>
+    <rect x="36" y="166" width="250" height="5" rx="3" fill="#21262d"/>
+    <rect x="36" y="166" width="166" height="5" rx="3" fill="url(#accent)"><animate attributeName="width" values="112;238;166;112" dur="4s" repeatCount="indefinite"/></rect>
+  </g>
+  <g transform="translate(796 70)">
+    <text x="0" y="0" fill="#c9d1d9" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="20" letter-spacing="2">WORKBENCH</text>
+    <g transform="translate(0 28)">
+      <rect width="290" height="116" rx="14" fill="#0d1117" fill-opacity=".62" stroke="#30363d"/>
+      <rect x="24" y="26" width="132" height="10" rx="5" fill="#00c897" opacity=".80"><animate attributeName="width" values="132;202;132" dur="3.8s" repeatCount="indefinite"/></rect>
+      <rect x="24" y="55" width="210" height="8" rx="4" fill="#8b949e" opacity=".50"/>
+      <rect x="24" y="78" width="162" height="8" rx="4" fill="#8b5cf6" opacity=".70"><animate attributeName="opacity" values=".35;.85;.35" dur="2.6s" repeatCount="indefinite"/></rect>
+      <circle cx="246" cy="46" r="13" fill="#feca57" filter="url(#glow)"><animate attributeName="r" values="10;16;10" dur="1.5s" repeatCount="indefinite"/></circle>
+      <circle cx="246" cy="84" r="9" fill="#00c897" opacity=".9"><animate attributeName="opacity" values=".25;1;.25" dur="1.5s" repeatCount="indefinite"/></circle>
+    </g>
+  </g>
+  <text x="56" y="290" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="16" letter-spacing="2">IDEAS → TOOLS → IMPACT</text>
+</svg>
