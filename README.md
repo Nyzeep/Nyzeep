@@ -24,6 +24,27 @@ approach  make it useful, then make it delightful</code></pre>
 - 喜欢把复杂能力做成更清楚、更顺手的产品体验；
 - 也会把技术带到社区与日常场景中，持续验证“软件能否真的帮上忙”。
 
+## 🧭 构建路线
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>01 · 可验证的 AI 工作台</h3>
+      <p><a href="https://github.com/Nyzeep/Halo-Studio">Halo-Studio</a> 把受管编码任务、任务基线与交付证据带入本地开发工作流。</p>
+      <sub>从“能跑”走向“能验证”。</sub>
+    </td>
+    <td width="50%" valign="top">
+      <h3>02 · 更顺手的开发界面</h3>
+      <p><a href="https://github.com/Nyzeep/dsh-material-file-icons">dsh-material-file-icons</a> 为 DeepSeek Harness 的 Files 树提供 Material 风格文件与目录图标。</p>
+      <sub>让高频浏览更轻、更清楚。</sub>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+  <sub>真实场景探索：<a href="https://github.com/Nyzeep/Ecoscout">Ecoscout</a>（社区环卫检测）与 <a href="https://github.com/Nyzeep/LumiMate">LumiMate</a>（伙伴式软件实验）。</sub>
+</div>
+
 ## 🧩 精选构建
 
 <table>
@@ -42,10 +63,6 @@ approach  make it useful, then make it delightful</code></pre>
     </td>
   </tr>
 </table>
-
-<div align="center">
-  <sub>也在探索 <a href="https://github.com/Nyzeep/Ecoscout">Ecoscout</a>（社区环卫检测）与 <a href="https://github.com/Nyzeep/LumiMate">LumiMate</a>（伙伴式软件实验）。</sub>
-</div>
 
 ## 🛠️ 常用工具链
 

@@ -235,6 +235,14 @@ mappings, 1,377 extension mappings, and 4,654 folder mappings.
 | DeepSeek Harness 扩展 / 开发者体验 | dsh-material-file-icons 的公开描述与 README。 |
 | 社区环卫检测 | Ecoscout 的公开仓库描述。 |
 
+## 主页构建路线文案映射
+
+| README 路线 | 可审计来源 | 采用边界 |
+| --- | --- | --- |
+| “受管编码任务、任务基线与交付证据” | Halo-Studio README 开头摘录：本地开发工作台、受管编码任务、任务基线与交付证据。 | 不把尚未发布的能力写成已完成的产品承诺。 |
+| “Files 树的 Material 风格文件与目录图标” | dsh-material-file-icons 的公开描述与 README 摘录。 | 表述为扩展定位，不承诺特定版本一定已自动安装。 |
+| “社区环卫检测”与“伙伴式软件实验”的轻量探索线 | Ecoscout 与 LumiMate 的公开仓库描述。 | 不从语言或描述推断模型、算法或未公开产品细节。 |
+
 ## 主页维护边界
 
 - 只有这里有来源的项目描述和技术标签才能留在主页核心区。
