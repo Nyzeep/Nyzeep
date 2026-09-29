@@ -1,46 +1,272 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
-  <title id="title">Nyzeep static developer workbench</title>
-  <desc id="desc">Static neon terminal workbench. Profile details appear in surrounding text.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="570" viewBox="0 0 1050 570" role="img" aria-label="Nyzeep Geek Linux Terminal &amp; Neofetch Profile">
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="55%" stop-color="#10232a"/>
-      <stop offset="100%" stop-color="#1b1633"/>
+    
+    <linearGradient id="term-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1017"/>
+      <stop offset="50%" stop-color="#101827"/>
+      <stop offset="100%" stop-color="#080c14"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#00c897"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
+    <linearGradient id="tui-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5a0"/>
+      <stop offset="35%" stop-color="#00d9f5"/>
+      <stop offset="70%" stop-color="#7b61ff"/>
+      <stop offset="100%" stop-color="#d946ef"/>
     </linearGradient>
-    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
-      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#8b949e" stroke-opacity=".08" stroke-width="1"/>
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5a0" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#30363d" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7b61ff" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="hud-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161f30" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0f1623" stop-opacity="0.85"/>
+    </linearGradient>
+    
+    <pattern id="grid-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#8b949e" fill-opacity="0.08"/>
     </pattern>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="neon-glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
-  <rect width="1200" height="320" rx="24" fill="url(#background)"/>
-  <rect width="1200" height="320" rx="24" fill="url(#grid)"/>
-  <circle cx="1082" cy="48" r="100" fill="#8b5cf6" opacity=".10"></circle>
-  <circle cx="96" cy="298" r="110" fill="#00c897" opacity=".08"></circle>
-  <path d="M0 266 C230 224 370 306 552 259 S888 222 1200 276" fill="none" stroke="url(#accent)" stroke-opacity=".42" stroke-width="2" filter="url(#glow)">
-  </path>
-  <g transform="translate(56 46)">
-    <rect width="654" height="190" rx="16" fill="#0d1117" fill-opacity=".80" stroke="#30363d"/>
-    <path d="M0 48 H654" stroke="#30363d"/>
-    <circle cx="28" cy="24" r="7" fill="#ff6b6b"/><circle cx="52" cy="24" r="7" fill="#feca57"/><circle cx="76" cy="24" r="7" fill="#1dd1a1"/>
-    <text x="34" y="112" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="56" font-weight="700" letter-spacing="3">NYZEEP</text>
-    <rect x="36" y="154" width="250" height="5" rx="3" fill="#21262d"/>
-    <rect x="36" y="154" width="166" height="5" rx="3" fill="url(#accent)"></rect>
+
+  <style>
+    .term-font {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
+    }
+    .lbl {
+      fill: #58a6ff;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+    .arrow {
+      fill: #6e7681;
+      font-size: 13.5px;
+    }
+    .txt {
+      fill: #e6edf3;
+      font-size: 13.5px;
+    }
+    .green {
+      fill: #00f5a0;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+    .cyan {
+      fill: #00d9f5;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+    .purple {
+      fill: #bc8cff;
+      font-size: 13.5px;
+    }
+    .yellow {
+      fill: #f1e05a;
+      font-size: 13.5px;
+    }
+    .dim {
+      fill: #8b949e;
+      font-size: 12.5px;
+    }
+  </style>
+
+  <!-- Terminal Window Background -->
+  <rect x="4" y="4" width="1042" height="562" rx="16" fill="url(#term-bg)" stroke="url(#border-glow)" stroke-width="1.5"/>
+  <rect x="4" y="4" width="1042" height="562" rx="16" fill="url(#grid-dots)"/>
+
+  <!-- Terminal Window Titlebar -->
+  <path d="M 4 20 C 4 11.163 11.163 4 20 4 L 1030 4 C 1038.837 4 1046 11.163 1046 20 L 1046 44 L 4 44 Z" fill="#161b22"/>
+  <line x1="4" y1="44" x2="1046" y2="44" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Window Action Buttons -->
+  <circle cx="26" cy="24" r="6.5" fill="#ff5f56"/>
+  <circle cx="46" cy="24" r="6.5" fill="#ffbd2e"/>
+  <circle cx="66" cy="24" r="6.5" fill="#27c93f"/>
+
+  <!-- Window Titlebar Text -->
+  <g class="term-font" font-size="12" fill="#8b949e">
+    <text x="525" y="28" text-anchor="middle">nyzeep@hypervisor:~ (fastfetch --geek --profile)</text>
+    <circle cx="985" cy="24" r="4.5" fill="#00f5a0"/>
+    <text x="996" y="28" font-size="11" fill="#7ee787" font-weight="600">LIVE</text>
   </g>
-  <g transform="translate(796 70)">
-    <g transform="translate(0 6)">
-      <rect width="290" height="116" rx="14" fill="#0d1117" fill-opacity=".62" stroke="#30363d"/>
-      <rect x="24" y="26" width="132" height="10" rx="5" fill="#00c897" opacity=".80"></rect>
-      <rect x="24" y="55" width="210" height="8" rx="4" fill="#8b949e" opacity=".50"/>
-      <rect x="24" y="78" width="162" height="8" rx="4" fill="#8b5cf6" opacity=".70"></rect>
-      <circle cx="246" cy="46" r="13" fill="#feca57" filter="url(#glow)"></circle>
-      <circle cx="246" cy="84" r="9" fill="#00c897" opacity=".9"></circle>
+
+  <!-- Terminal Workspace -->
+  <g transform="translate(36, 76)" class="term-font">
+    <!-- Fastfetch Command Prompt -->
+    <text y="0" font-size="14.5" xml:space="preserve">
+      <tspan fill="#00f5a0" font-weight="700">nyzeep</tspan>
+      <tspan fill="#8b949e">@</tspan>
+      <tspan fill="#bc8cff" font-weight="700">hypervisor</tspan>
+      <tspan fill="#8b949e"> in </tspan>
+      <tspan fill="#58a6ff" font-weight="600">~</tspan>
+      <tspan fill="#8b949e"> on </tspan>
+      <tspan fill="#f1e05a">main [⇡1]</tspan>
+      <tspan fill="#00f5a0" font-weight="700"> ❯ </tspan>
+      <tspan fill="#f0f6fc">fastfetch --config geek.conf</tspan>
+    </text>
+
+    <!-- Top Section: TUI Banner & System HUD -->
+    <g transform="translate(0, 18)">
+      <!-- TUI Username Banner -->
+      <text font-size="14" fill="url(#tui-gradient)" font-weight="900" filter="url(#neon-glow)" xml:space="preserve">
+        <tspan x="0" y="20">███╗   ██╗██╗   ██╗███████╗███████╗███████╗██████╗ </tspan>
+        <tspan x="0" y="39">████╗  ██║╚██╗ ██╔╝╚══███╔╝██╔════╝██╔════╝██╔══██╗</tspan>
+        <tspan x="0" y="58">██╔██╗ ██║ ╚████╔╝   ███╔╝ █████╗  █████╗  ██████╔╝</tspan>
+        <tspan x="0" y="77">██║╚██╗██║  ╚██╔╝   ███╔╝  ██╔══╝  ██╔══╝  ██╔═══╝ </tspan>
+        <tspan x="0" y="96">██║ ╚████║   ██║   ███████╗███████╗███████╗██║     </tspan>
+        <tspan x="0" y="115">╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     </tspan>
+      </text>
+
+      <!-- HUD Monitor Box on the Right -->
+      <g transform="translate(530, 8)">
+        <rect width="445" height="114" rx="10" fill="url(#hud-bg)" stroke="#30363d" stroke-width="1.2"/>
+        <!-- Top bar of HUD -->
+        <rect width="445" height="26" rx="10" fill="#1f293d"/>
+        <line x1="0" y1="26" x2="445" y2="26" stroke="#30363d" stroke-width="1"/>
+        <text x="16" y="18" font-size="11" fill="#00d9f5" font-weight="700" letter-spacing="1">SYSTEM TELEMETRY HUD // NYZEEP-CORE</text>
+        <circle cx="425" cy="13" r="3.5" fill="#00f5a0"/>
+
+        <!-- HUD Content -->
+        <text x="16" y="48" font-size="12" fill="#8b949e">HOST     :: <tspan fill="#58a6ff" font-weight="600">Halo-Studio Agentic Station</tspan></text>
+        <text x="16" y="68" font-size="12" fill="#8b949e">MISSION  :: <tspan fill="#00f5a0" font-weight="600">Make it useful, then make it delightful</tspan></text>
+        <text x="16" y="88" font-size="12" fill="#8b949e">ENGINE   :: <tspan fill="#bc8cff">DeepSeek Harness · Autonomous Agents</tspan></text>
+        <text x="16" y="105" font-size="11.5" fill="#8b949e">STATUS   :: <tspan fill="#7ee787">● OPERATIONAL</tspan> · <tspan fill="#e6edf3">Crafting Next-Gen DevTools</tspan></text>
+      </g>
+    </g>
+
+    <!-- Cyber Divider -->
+    <g transform="translate(0, 154)">
+      <line x1="0" y1="0" x2="978" y2="0" stroke="#30363d" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <circle cx="489" cy="0" r="3" fill="#00d9f5"/>
+    </g>
+
+    <!-- Neofetch 2-Column Specs -->
+    <g transform="translate(0, 180)">
+      <!-- Left Column: System & Environment -->
+      <g transform="translate(0, 0)">
+        <text y="0" xml:space="preserve">
+          <tspan class="lbl">User</tspan>
+          <tspan class="arrow"> ───────── </tspan>
+          <tspan class="green">nyzeep</tspan>
+          <tspan class="txt"> (Craftsman &amp; Explorer)</tspan>
+        </text>
+        <text y="24" xml:space="preserve">
+          <tspan class="lbl">OS</tspan>
+          <tspan class="arrow"> ─────────── </tspan>
+          <tspan class="txt">Arch Linux x86_64 / DeepSeek Harness</tspan>
+        </text>
+        <text y="48" xml:space="preserve">
+          <tspan class="lbl">Kernel</tspan>
+          <tspan class="arrow"> ─────── </tspan>
+          <tspan class="txt">Linux 6.12.0-agentic-lts</tspan>
+        </text>
+        <text y="72" xml:space="preserve">
+          <tspan class="lbl">Uptime</tspan>
+          <tspan class="arrow"> ─────── </tspan>
+          <tspan class="yellow">24/7</tspan>
+          <tspan class="txt"> (Deep Work &amp; Open Source)</tspan>
+        </text>
+        <text y="96" xml:space="preserve">
+          <tspan class="lbl">Shell</tspan>
+          <tspan class="arrow"> ──────── </tspan>
+          <tspan class="txt">zsh 5.9 + starship (geek-preset)</tspan>
+        </text>
+        <text y="120" xml:space="preserve">
+          <tspan class="lbl">DE / WM</tspan>
+          <tspan class="arrow"> ────── </tspan>
+          <tspan class="txt">Hyprland (Wayland) + Waybar</tspan>
+        </text>
+        <text y="144" xml:space="preserve">
+          <tspan class="lbl">Terminal</tspan>
+          <tspan class="arrow"> ───── </tspan>
+          <tspan class="purple">kitty</tspan>
+          <tspan class="txt"> (Tokyo Night / Neon Cyberpunk)</tspan>
+        </text>
+      </g>
+
+      <!-- Right Column: Focus, Tech & Projects -->
+      <g transform="translate(520, 0)">
+        <text y="0" xml:space="preserve">
+          <tspan class="lbl">Neural Core</tspan>
+          <tspan class="arrow"> ── </tspan>
+          <tspan class="cyan">DeepSeek Harness Engine @ 128k</tspan>
+        </text>
+        <text y="24" xml:space="preserve">
+          <tspan class="lbl">Focus</tspan>
+          <tspan class="arrow"> ──────── </tspan>
+          <tspan class="green">AI Agent Tooling</tspan>
+          <tspan class="txt"> · Dev Experience</tspan>
+        </text>
+        <text y="48" xml:space="preserve">
+          <tspan class="lbl">Core Stack</tspan>
+          <tspan class="arrow"> ─── </tspan>
+          <tspan class="txt">Rust · TypeScript · Python · Vue</tspan>
+        </text>
+        <text y="72" xml:space="preserve">
+          <tspan class="lbl">Flagship</tspan>
+          <tspan class="arrow"> ───── </tspan>
+          <tspan class="green">Nyzeep/Halo-Studio</tspan>
+          <tspan class="dim"> (AI Workbench)</tspan>
+        </text>
+        <text y="96" xml:space="preserve">
+          <tspan class="lbl">Extensions</tspan>
+          <tspan class="arrow"> ─── </tspan>
+          <tspan class="purple">Nyzeep/dsh-material-file-icons</tspan>
+        </text>
+        <text y="120" xml:space="preserve">
+          <tspan class="lbl">Editor</tspan>
+          <tspan class="arrow"> ─────── </tspan>
+          <tspan class="txt">Neovim · VS Code · Antigravity</tspan>
+        </text>
+        <text y="144" xml:space="preserve">
+          <tspan class="lbl">Philosophy</tspan>
+          <tspan class="arrow"> ─── </tspan>
+          <tspan class="yellow">Make it useful, then delightful 🚀</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- Bottom Section: Color Palette & Next Terminal Prompt -->
+    <g transform="translate(0, 368)">
+      <!-- 16 Terminal ANSI Color Blocks -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="36" height="15" rx="3" fill="#1f2335"/>
+        <rect x="42" y="0" width="36" height="15" rx="3" fill="#f7768e"/>
+        <rect x="84" y="0" width="36" height="15" rx="3" fill="#73daca"/>
+        <rect x="126" y="0" width="36" height="15" rx="3" fill="#e0af68"/>
+        <rect x="168" y="0" width="36" height="15" rx="3" fill="#7aa2f7"/>
+        <rect x="210" y="0" width="36" height="15" rx="3" fill="#bb9af7"/>
+        <rect x="252" y="0" width="36" height="15" rx="3" fill="#7dcfff"/>
+        <rect x="294" y="0" width="36" height="15" rx="3" fill="#c0caf5"/>
+
+        <rect x="346" y="0" width="36" height="15" rx="3" fill="#414868"/>
+        <rect x="388" y="0" width="36" height="15" rx="3" fill="#ff7a93"/>
+        <rect x="430" y="0" width="36" height="15" rx="3" fill="#b9f27c"/>
+        <rect x="472" y="0" width="36" height="15" rx="3" fill="#ff9e64"/>
+        <rect x="514" y="0" width="36" height="15" rx="3" fill="#2ac3de"/>
+        <rect x="556" y="0" width="36" height="15" rx="3" fill="#c099ff"/>
+        <rect x="598" y="0" width="36" height="15" rx="3" fill="#00f5a0"/>
+        <rect x="640" y="0" width="36" height="15" rx="3" fill="#ffffff"/>
+      </g>
+
+      <!-- Next Terminal Prompt Line with Blinking Cursor -->
+      <g transform="translate(0, 42)">
+        <text font-size="14.5" xml:space="preserve">
+          <tspan fill="#00f5a0" font-weight="700">nyzeep</tspan>
+          <tspan fill="#8b949e">@</tspan>
+          <tspan fill="#bc8cff" font-weight="700">hypervisor</tspan>
+          <tspan fill="#8b949e"> in </tspan>
+          <tspan fill="#58a6ff" font-weight="600">~</tspan>
+          <tspan fill="#00f5a0" font-weight="700"> ❯ </tspan>
+          <tspan fill="#f0f6fc">cat /etc/motd</tspan>
+        </text>
+        <rect x="330" y="-13" width="9" height="17" fill="#00f5a0" opacity="0.9"/>
+      </g>
     </g>
   </g>
 </svg>

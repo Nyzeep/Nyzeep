@@ -28,3 +28,11 @@
 - 首屏 SVG 只保留易读的名称作为视觉锚点；身份、项目与技术信息均在 README 正文中可访问。
 - 当访客启用 `prefers-reduced-motion` 时，README 的 `<picture>` 选择不含 `<animate>` 的静态 SVG；动画版不承载必要信息。
 - 若精选项目、描述或技术栈变化，应同时更新 README、证据档和本决策记录。
+
+## 极客终端与 Neofetch 升级记录
+
+1. **首屏升级**：将原基础 SVG 重构为原生 Linux Neofetch / Fastfetch 极客终端界面，采用 ANSI Shadow TUI 字符组装 `NYZEEP` 标题与赛博朋克渐变霓虹光效。
+2. **终端遥测**：集成 Arch Linux、DeepSeek Harness 核心架构、Starship 提示符、16 色 ANSI 调色板与动态光标。
+3. **高可用统计**：使用高可用统计镜像替换已暂停服务的公共端点，并匹配 Tokyo Night 赛博深色主题。
+4. **无障碍支持**：同步维护包含与不包含 `<animate>` 的静态回退版本 `nyzeep-terminal-static.svg`。
+
