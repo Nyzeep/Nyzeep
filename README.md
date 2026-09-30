@@ -1,29 +1,29 @@
 <!--
   Nyzeep's GitHub Profile
-  Theme: Geek Terminal / Neofetch Cyberpunk Workstation
+  Theme: Matrix Digital Rain / Neofetch Geek Terminal
   Design Principle: Verified work first, authentic hacker DX aesthetic.
 -->
 
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal-static.svg" />
-    <img src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal.svg" alt="Nyzeep Geek Terminal &amp; Neofetch Profile" width="100%" />
+    <img src="https://raw.githubusercontent.com/Nyzeep/Nyzeep/main/assets/nyzeep-terminal.svg" alt="Nyzeep Matrix Terminal &amp; Neofetch Profile" width="100%" />
   </picture>
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/SYSTEM-ONLINE-00F5A0?style=for-the-badge&logo=gnubash&logoColor=black" alt="System Online" />
+  <img src="https://img.shields.io/badge/SYSTEM-ONLINE-00FF66?style=for-the-badge&logo=gnubash&logoColor=black" alt="System Online" />
   <img src="https://img.shields.io/badge/OS-ARCH_LINUX-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" alt="Arch Linux" />
-  <img src="https://img.shields.io/badge/SHELL-ZSH_%2B_STARSHIP-7B61FF?style=for-the-badge&logo=zsh&logoColor=white" alt="Zsh + Starship" />
-  <img src="https://img.shields.io/badge/AI_CORE-AGENTIC_DEVTOOLS-00D9F5?style=for-the-badge&logo=openai&logoColor=black" alt="AI Agent DevTools" />
+  <img src="https://img.shields.io/badge/SHELL-ZSH_%2B_STARSHIP-00D9F5?style=for-the-badge&logo=zsh&logoColor=black" alt="Zsh + Starship" />
+  <img src="https://img.shields.io/badge/AI_CORE-AGENTIC_DEVTOOLS-00FF88?style=for-the-badge&logo=openai&logoColor=black" alt="AI Agent DevTools" />
   <a href="https://github.com/Nyzeep?tab=repositories"><img src="https://img.shields.io/badge/EXPLORE-REPOSITORIES-238636?style=for-the-badge&logo=github&logoColor=white" alt="Explore Repositories" /></a>
-  <a href="https://github.com/Nyzeep?tab=followers"><img src="https://img.shields.io/github/followers/Nyzeep?style=for-the-badge&logo=github&label=FOLLOW&color=8B5CF6" alt="Follow Nyzeep" /></a>
+  <a href="https://github.com/Nyzeep?tab=followers"><img src="https://img.shields.io/github/followers/Nyzeep?style=for-the-badge&logo=github&label=FOLLOW&color=7B61FF" alt="Follow Nyzeep" /></a>
 </div>
 
 <br/>
 
 ```bash
-nyzeep@hypervisor:~$ cat << 'EOF' > /proc/identity.json
+nyzeep@matrix:~$ cat << 'EOF' > /proc/identity.json
 {
   "developer": "Nyzeep",
   "role": "AI Agent Tooling Craftsman & Open Source Builder",
@@ -89,7 +89,7 @@ EOF
 ### 🛠️ 常用工具链矩阵 // Tech Stack & Arsenal
 
 ```bash
-nyzeep@hypervisor:~$ pacman -Qe --groups core-toolchain
+nyzeep@matrix:~$ pacman -Qe --groups core-toolchain
 ```
 
 <div align="center">
@@ -140,6 +140,6 @@ nyzeep@hypervisor:~$ pacman -Qe --groups core-toolchain
 ---
 
 ```bash
-nyzeep@hypervisor:~$ exit 0
+nyzeep@matrix:~$ exit 0
 [Process completed - Build with curiosity · Say hello on GitHub]
 ```
