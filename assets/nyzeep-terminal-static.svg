@@ -1,44 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="570" viewBox="0 0 1050 570" role="img" aria-label="Nyzeep Matrix Terminal &amp; Neofetch Profile">
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="540" viewBox="0 0 1050 540" role="img" aria-label="Nyzeep Developer Terminal">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="matrix-abyss" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#040906"/>
-      <stop offset="50%" stop-color="#06120b"/>
-      <stop offset="100%" stop-color="#030805"/>
+    <!-- Background Gradient (Tokyo Night / Deep Slate) -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0e14"/>
+      <stop offset="50%" stop-color="#111624"/>
+      <stop offset="100%" stop-color="#0a0d14"/>
     </linearGradient>
 
-    <!-- Glowing Border Gradient -->
-    <linearGradient id="matrix-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00ff66" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#00d9f5" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#00ff66" stop-opacity="0.8"/>
+    <!-- Subtle Border Glow -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dcfff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#3b4261" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#bb9af7" stop-opacity="0.6"/>
     </linearGradient>
 
-    <!-- TUI Text Matrix Gradient -->
-    <linearGradient id="tui-matrix" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00ff88"/>
-      <stop offset="35%" stop-color="#00f5a0"/>
-      <stop offset="70%" stop-color="#00d9f5"/>
-      <stop offset="100%" stop-color="#a3ffb8"/>
+    <!-- TUI Text Gradient (Cyan -> Electric Blue -> Lavender) -->
+    <linearGradient id="tui-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dcfff"/>
+      <stop offset="45%" stop-color="#7aa2f7"/>
+      <stop offset="85%" stop-color="#bb9af7"/>
+      <stop offset="100%" stop-color="#c0caf5"/>
     </linearGradient>
 
-    <!-- Panel Background -->
-    <linearGradient id="panel-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#08140e" stop-opacity="0.88"/>
-      <stop offset="100%" stop-color="#050e09" stop-opacity="0.88"/>
+    <!-- Panel Card Background -->
+    <linearGradient id="panel-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161c2c" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#101422" stop-opacity="0.82"/>
     </linearGradient>
 
     <!-- Neon Glow Filter -->
-    <filter id="matrix-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -50,529 +42,453 @@
     .mono {
       font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
     }
-    .panel-header {
-      fill: #00d9f5;
-      font-size: 12.5px;
+    .panel-hdr {
+      fill: #7dcfff;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
     }
-    .lbl {
-      fill: #00ff88;
+    .key {
+      fill: #7aa2f7;
       font-weight: 600;
       font-size: 13.5px;
     }
     .sep {
-      fill: #3e6b52;
+      fill: #3b4261;
       font-size: 13.5px;
     }
     .val {
-      fill: #f0f6fc;
+      fill: #c0caf5;
       font-size: 13.5px;
     }
-    .val-yellow {
-      fill: #f1e05a;
+    .val-highlight {
+      fill: #7dcfff;
       font-weight: 600;
       font-size: 13.5px;
     }
-    .val-cyan {
-      fill: #00d9f5;
-      font-weight: 600;
+    .val-accent {
+      fill: #bb9af7;
       font-size: 13.5px;
     }
   </style>
 
-  <!-- Window Container -->
-  <rect x="4" y="4" width="1042" height="562" rx="16" fill="url(#matrix-abyss)" stroke="url(#matrix-border)" stroke-width="1.6"/>
+  <!-- Terminal Window Background -->
+  <rect x="4" y="4" width="1042" height="532" rx="14" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="1.2"/>
 
-  <!-- Matrix Digital Rain Layer -->
+  <!-- Background Digital Code Rain Layer (Subtle, non-intrusive) -->
   <g clip-path="url(#window-clip)">
     <clipPath id="window-clip">
-      <rect x="5" y="44" width="1040" height="520" rx="0"/>
+      <rect x="5" y="42" width="1040" height="492" rx="0"/>
     </clipPath>
-    <!-- Background digital rain -->
-    <g opacity="0.35">
-    <g transform="translate(0, 106)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="35" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">8</tspan>
-        <tspan x="35" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">=</tspan>
-        <tspan x="35" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾈ</tspan>
-        <tspan x="35" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">X</tspan>
-        <tspan x="35" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">Z</tspan>
-        <tspan x="35" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">%</tspan>
-        <tspan x="35" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾜ</tspan>
-        <tspan x="35" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">?</tspan>
-        <tspan x="35" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾗ</tspan>
-        <tspan x="35" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｽ</tspan>
-        <tspan x="35" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">R</tspan>
-        <tspan x="35" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾈ</tspan>
-        <tspan x="35" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾑ</tspan>
-        <tspan x="35" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾀ</tspan>
-        <tspan x="35" y="238" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">-</tspan>
-        <tspan x="35" y="255" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾎ</tspan>
+    <g opacity="0.22">
+    <g transform="translate(0, 191)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="35" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
+        <tspan x="35" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="35" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="35" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
+        <tspan x="35" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
+        <tspan x="35" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">C</tspan>
+        <tspan x="35" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">+</tspan>
+        <tspan x="35" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">+</tspan>
+        <tspan x="35" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
+        <tspan x="35" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">]</tspan>
       </text>
     </g>
-    <g transform="translate(0, -20)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="77" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾍ</tspan>
-        <tspan x="77" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">R</tspan>
-        <tspan x="77" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾀ</tspan>
-        <tspan x="77" y="51" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｳ</tspan>
-        <tspan x="77" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">5</tspan>
-        <tspan x="77" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">-</tspan>
-        <tspan x="77" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">*</tspan>
-        <tspan x="77" y="119" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｾ</tspan>
-        <tspan x="77" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾀ</tspan>
-        <tspan x="77" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾀ</tspan>
-        <tspan x="77" y="170" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">#</tspan>
-        <tspan x="77" y="187" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾑ</tspan>
+    <g transform="translate(0, 68)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="81" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
+        <tspan x="81" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">*</tspan>
+        <tspan x="81" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
+        <tspan x="81" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">C</tspan>
+        <tspan x="81" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">0</tspan>
+        <tspan x="81" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
+        <tspan x="81" y="108" fill="#3b4261" fill-opacity="0.18" font-weight="normal">A</tspan>
+        <tspan x="81" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
+        <tspan x="81" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">9</tspan>
+        <tspan x="81" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">@</tspan>
+        <tspan x="81" y="180" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
+        <tspan x="81" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">(</tspan>
+        <tspan x="81" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
+        <tspan x="81" y="234" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">@</tspan>
+        <tspan x="81" y="252" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">=</tspan>
+        <tspan x="81" y="270" fill="#ffffff" fill-opacity="0.9" font-weight="bold">)</tspan>
       </text>
     </g>
-    <g transform="translate(0, -44)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="120" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾒ</tspan>
-        <tspan x="120" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾜ</tspan>
-        <tspan x="120" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾕ</tspan>
-        <tspan x="120" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">+</tspan>
-        <tspan x="120" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">-</tspan>
-        <tspan x="120" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">Y</tspan>
-        <tspan x="120" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">1</tspan>
-        <tspan x="120" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">Y</tspan>
-        <tspan x="120" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｴ</tspan>
-        <tspan x="120" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾃ</tspan>
-        <tspan x="120" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">9</tspan>
-        <tspan x="120" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｳ</tspan>
-        <tspan x="120" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">R</tspan>
-        <tspan x="120" y="221" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">7</tspan>
-        <tspan x="120" y="238" fill="#ffffff" fill-opacity="0.95" font-weight="bold">K</tspan>
+    <g transform="translate(0, 98)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="128" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">}</tspan>
+        <tspan x="128" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
+        <tspan x="128" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">[</tspan>
+        <tspan x="128" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">;</tspan>
+        <tspan x="128" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="128" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
+        <tspan x="128" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">A</tspan>
+        <tspan x="128" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">;</tspan>
+        <tspan x="128" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">{</tspan>
+        <tspan x="128" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="128" y="180" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
+        <tspan x="128" y="198" fill="#ffffff" fill-opacity="0.9" font-weight="bold">~</tspan>
       </text>
     </g>
-    <g transform="translate(0, 90)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="162" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">:</tspan>
-        <tspan x="162" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">K</tspan>
-        <tspan x="162" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｰ</tspan>
-        <tspan x="162" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">+</tspan>
-        <tspan x="162" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾐ</tspan>
-        <tspan x="162" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">R</tspan>
-        <tspan x="162" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾃ</tspan>
-        <tspan x="162" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾃ</tspan>
-        <tspan x="162" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾅ</tspan>
-        <tspan x="162" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｷ</tspan>
-        <tspan x="162" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾃ</tspan>
-        <tspan x="162" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">0</tspan>
-        <tspan x="162" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">#</tspan>
-        <tspan x="162" y="221" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">X</tspan>
-        <tspan x="162" y="238" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾕ</tspan>
+    <g transform="translate(0, 191)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="175" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
+        <tspan x="175" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">}</tspan>
+        <tspan x="175" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">}</tspan>
+        <tspan x="175" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
+        <tspan x="175" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
+        <tspan x="175" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="175" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">[</tspan>
+        <tspan x="175" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">*</tspan>
+        <tspan x="175" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
+        <tspan x="175" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">)</tspan>
       </text>
     </g>
-    <g transform="translate(0, 173)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="205" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">X</tspan>
-        <tspan x="205" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｹ</tspan>
-        <tspan x="205" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">9</tspan>
-        <tspan x="205" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾋ</tspan>
-        <tspan x="205" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">?</tspan>
-        <tspan x="205" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">9</tspan>
-        <tspan x="205" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">%</tspan>
-        <tspan x="205" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">:</tspan>
-        <tspan x="205" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾑ</tspan>
-        <tspan x="205" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾎ</tspan>
-        <tspan x="205" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">K</tspan>
-        <tspan x="205" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾂ</tspan>
-        <tspan x="205" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">7</tspan>
-        <tspan x="205" y="221" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">7</tspan>
-        <tspan x="205" y="238" fill="#ffffff" fill-opacity="0.95" font-weight="bold">7</tspan>
+    <g transform="translate(0, -8)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="221" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="221" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
+        <tspan x="221" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
+        <tspan x="221" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">*</tspan>
+        <tspan x="221" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
+        <tspan x="221" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="221" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="221" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
+        <tspan x="221" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
+        <tspan x="221" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">*</tspan>
+        <tspan x="221" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">C</tspan>
+        <tspan x="221" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">#</tspan>
+        <tspan x="221" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">X</tspan>
       </text>
     </g>
-    <g transform="translate(0, -50)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="248" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">#</tspan>
-        <tspan x="248" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">Z</tspan>
-        <tspan x="248" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">1</tspan>
-        <tspan x="248" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾐ</tspan>
-        <tspan x="248" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">7</tspan>
-        <tspan x="248" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">3</tspan>
-        <tspan x="248" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">8</tspan>
-        <tspan x="248" y="119" fill="#00551e" fill-opacity="0.20" font-weight="normal">!</tspan>
-        <tspan x="248" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">:</tspan>
-        <tspan x="248" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">%</tspan>
-        <tspan x="248" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｾ</tspan>
-        <tspan x="248" y="187" fill="#00cc52" fill-opacity="0.40" font-weight="normal">#</tspan>
-        <tspan x="248" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">9</tspan>
-        <tspan x="248" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">X</tspan>
-        <tspan x="248" y="238" fill="#00ff66" fill-opacity="0.65" font-weight="normal">:</tspan>
-        <tspan x="248" y="255" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ｴ</tspan>
-        <tspan x="248" y="272" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ｴ</tspan>
+    <g transform="translate(0, 97)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="268" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
+        <tspan x="268" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
+        <tspan x="268" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
+        <tspan x="268" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">X</tspan>
+        <tspan x="268" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
+        <tspan x="268" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">C</tspan>
+        <tspan x="268" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
+        <tspan x="268" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
+        <tspan x="268" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
+        <tspan x="268" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
+        <tspan x="268" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">=</tspan>
+        <tspan x="268" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">)</tspan>
+        <tspan x="268" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">:</tspan>
+        <tspan x="268" y="234" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
+        <tspan x="268" y="252" fill="#ffffff" fill-opacity="0.9" font-weight="bold">7</tspan>
       </text>
     </g>
-    <g transform="translate(0, 140)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="290" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾕ</tspan>
-        <tspan x="290" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｼ</tspan>
-        <tspan x="290" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾃ</tspan>
-        <tspan x="290" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">0</tspan>
-        <tspan x="290" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">8</tspan>
-        <tspan x="290" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｴ</tspan>
-        <tspan x="290" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｰ</tspan>
-        <tspan x="290" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">9</tspan>
-        <tspan x="290" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｻ</tspan>
-        <tspan x="290" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾍ</tspan>
-        <tspan x="290" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｾ</tspan>
-        <tspan x="290" y="187" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">Y</tspan>
-        <tspan x="290" y="204" fill="#ffffff" fill-opacity="0.95" font-weight="bold">=</tspan>
+    <g transform="translate(0, 174)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="315" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
+        <tspan x="315" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">-</tspan>
+        <tspan x="315" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="315" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
+        <tspan x="315" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
+        <tspan x="315" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
+        <tspan x="315" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">[</tspan>
+        <tspan x="315" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
+        <tspan x="315" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Y</tspan>
+        <tspan x="315" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">9</tspan>
+        <tspan x="315" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">@</tspan>
+        <tspan x="315" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">7</tspan>
+        <tspan x="315" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">0</tspan>
+        <tspan x="315" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">1</tspan>
       </text>
     </g>
-    <g transform="translate(0, -11)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="333" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">#</tspan>
-        <tspan x="333" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｻ</tspan>
-        <tspan x="333" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｰ</tspan>
-        <tspan x="333" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">R</tspan>
-        <tspan x="333" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">1</tspan>
-        <tspan x="333" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｾ</tspan>
-        <tspan x="333" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｽ</tspan>
-        <tspan x="333" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｳ</tspan>
-        <tspan x="333" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾎ</tspan>
-        <tspan x="333" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｾ</tspan>
-        <tspan x="333" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">*</tspan>
-        <tspan x="333" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">+</tspan>
-        <tspan x="333" y="204" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">:</tspan>
-        <tspan x="333" y="221" fill="#ffffff" fill-opacity="0.95" font-weight="bold">Y</tspan>
-      </text>
-    </g>
-    <g transform="translate(0, 84)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="375" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾀ</tspan>
-        <tspan x="375" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">K</tspan>
-        <tspan x="375" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾍ</tspan>
-        <tspan x="375" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">9</tspan>
-        <tspan x="375" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｴ</tspan>
-        <tspan x="375" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾜ</tspan>
-        <tspan x="375" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｹ</tspan>
-        <tspan x="375" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">=</tspan>
-        <tspan x="375" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾗ</tspan>
-        <tspan x="375" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾀ</tspan>
-        <tspan x="375" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">K</tspan>
-        <tspan x="375" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾃ</tspan>
-        <tspan x="375" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">!</tspan>
-        <tspan x="375" y="221" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">K</tspan>
-        <tspan x="375" y="238" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾇ</tspan>
+    <g transform="translate(0, 102)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="361" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="361" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
+        <tspan x="361" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">}</tspan>
+        <tspan x="361" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
+        <tspan x="361" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
+        <tspan x="361" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
+        <tspan x="361" y="108" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
+        <tspan x="361" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
+        <tspan x="361" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="361" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">#</tspan>
+        <tspan x="361" y="180" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">@</tspan>
+        <tspan x="361" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">)</tspan>
+        <tspan x="361" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
+        <tspan x="361" y="234" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">]</tspan>
+        <tspan x="361" y="252" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
+        <tspan x="361" y="270" fill="#ffffff" fill-opacity="0.9" font-weight="bold">=</tspan>
       </text>
     </g>
     <g transform="translate(0, 76)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="418" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾐ</tspan>
-        <tspan x="418" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">8</tspan>
-        <tspan x="418" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">Y</tspan>
-        <tspan x="418" y="51" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾃ</tspan>
-        <tspan x="418" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">:</tspan>
-        <tspan x="418" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾍ</tspan>
-        <tspan x="418" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾑ</tspan>
-        <tspan x="418" y="119" fill="#00ff66" fill-opacity="0.65" font-weight="normal">!</tspan>
-        <tspan x="418" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">8</tspan>
-        <tspan x="418" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾕ</tspan>
-        <tspan x="418" y="170" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">?</tspan>
-        <tspan x="418" y="187" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾀ</tspan>
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="408" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
+        <tspan x="408" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
+        <tspan x="408" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
+        <tspan x="408" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
+        <tspan x="408" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
+        <tspan x="408" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
+        <tspan x="408" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="408" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
+        <tspan x="408" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">(</tspan>
+        <tspan x="408" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Z</tspan>
+        <tspan x="408" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">]</tspan>
+        <tspan x="408" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">@</tspan>
+        <tspan x="408" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">;</tspan>
       </text>
     </g>
-    <g transform="translate(0, 60)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="461" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">Z</tspan>
-        <tspan x="461" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｽ</tspan>
-        <tspan x="461" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">R</tspan>
-        <tspan x="461" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｽ</tspan>
-        <tspan x="461" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｻ</tspan>
-        <tspan x="461" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">K</tspan>
-        <tspan x="461" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｶ</tspan>
-        <tspan x="461" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">!</tspan>
-        <tspan x="461" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">#</tspan>
-        <tspan x="461" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾒ</tspan>
-        <tspan x="461" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｽ</tspan>
-        <tspan x="461" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">=</tspan>
-        <tspan x="461" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｼ</tspan>
-        <tspan x="461" y="221" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">1</tspan>
-        <tspan x="461" y="238" fill="#ffffff" fill-opacity="0.95" font-weight="bold">-</tspan>
+    <g transform="translate(0, 41)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="455" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">}</tspan>
+        <tspan x="455" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
+        <tspan x="455" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
+        <tspan x="455" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">;</tspan>
+        <tspan x="455" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
+        <tspan x="455" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">X</tspan>
+        <tspan x="455" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
+        <tspan x="455" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">0</tspan>
+        <tspan x="455" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="455" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
+        <tspan x="455" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">(</tspan>
+        <tspan x="455" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">*</tspan>
+        <tspan x="455" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">~</tspan>
       </text>
     </g>
-    <g transform="translate(0, 28)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="503" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">7</tspan>
-        <tspan x="503" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">Y</tspan>
-        <tspan x="503" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｽ</tspan>
-        <tspan x="503" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾆ</tspan>
-        <tspan x="503" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾋ</tspan>
-        <tspan x="503" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">5</tspan>
-        <tspan x="503" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">Z</tspan>
-        <tspan x="503" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｽ</tspan>
-        <tspan x="503" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾃ</tspan>
-        <tspan x="503" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">R</tspan>
-        <tspan x="503" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">0</tspan>
-        <tspan x="503" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾓ</tspan>
-        <tspan x="503" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">*</tspan>
-        <tspan x="503" y="221" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾒ</tspan>
-        <tspan x="503" y="238" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾑ</tspan>
+    <g transform="translate(0, 191)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="501" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
+        <tspan x="501" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
+        <tspan x="501" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">1</tspan>
+        <tspan x="501" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">#</tspan>
+        <tspan x="501" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
+        <tspan x="501" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
+        <tspan x="501" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">=</tspan>
+        <tspan x="501" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">#</tspan>
+        <tspan x="501" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
+        <tspan x="501" y="162" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">}</tspan>
+        <tspan x="501" y="180" fill="#ffffff" fill-opacity="0.9" font-weight="bold">X</tspan>
       </text>
     </g>
-    <g transform="translate(0, -72)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="546" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">8</tspan>
-        <tspan x="546" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾗ</tspan>
-        <tspan x="546" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｶ</tspan>
-        <tspan x="546" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">Z</tspan>
-        <tspan x="546" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾅ</tspan>
-        <tspan x="546" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">+</tspan>
-        <tspan x="546" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">+</tspan>
-        <tspan x="546" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｻ</tspan>
-        <tspan x="546" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">5</tspan>
-        <tspan x="546" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">?</tspan>
-        <tspan x="546" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">Z</tspan>
-        <tspan x="546" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">*</tspan>
-        <tspan x="546" y="204" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">:</tspan>
-        <tspan x="546" y="221" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾋ</tspan>
+    <g transform="translate(0, 96)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="548" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">;</tspan>
+        <tspan x="548" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">X</tspan>
+        <tspan x="548" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">~</tspan>
+        <tspan x="548" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">C</tspan>
+        <tspan x="548" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
+        <tspan x="548" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">*</tspan>
+        <tspan x="548" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">X</tspan>
+        <tspan x="548" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">+</tspan>
+        <tspan x="548" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
+        <tspan x="548" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="548" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">9</tspan>
+        <tspan x="548" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="548" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">]</tspan>
+        <tspan x="548" y="234" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">=</tspan>
+        <tspan x="548" y="252" fill="#ffffff" fill-opacity="0.9" font-weight="bold">Z</tspan>
       </text>
     </g>
-    <g transform="translate(0, -59)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="588" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｻ</tspan>
-        <tspan x="588" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">1</tspan>
-        <tspan x="588" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｼ</tspan>
-        <tspan x="588" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">:</tspan>
-        <tspan x="588" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">%</tspan>
-        <tspan x="588" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">K</tspan>
-        <tspan x="588" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">3</tspan>
-        <tspan x="588" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">1</tspan>
-        <tspan x="588" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">#</tspan>
-        <tspan x="588" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">%</tspan>
-        <tspan x="588" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾐ</tspan>
-        <tspan x="588" y="187" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾂ</tspan>
-        <tspan x="588" y="204" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾃ</tspan>
+    <g transform="translate(0, -47)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="595" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
+        <tspan x="595" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">[</tspan>
+        <tspan x="595" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
+        <tspan x="595" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">X</tspan>
+        <tspan x="595" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="595" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
+        <tspan x="595" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Y</tspan>
+        <tspan x="595" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">[</tspan>
+        <tspan x="595" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">0</tspan>
+        <tspan x="595" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">F</tspan>
+        <tspan x="595" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">[</tspan>
+        <tspan x="595" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="595" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">1</tspan>
+        <tspan x="595" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">@</tspan>
       </text>
     </g>
-    <g transform="translate(0, 19)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="631" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">R</tspan>
-        <tspan x="631" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">0</tspan>
-        <tspan x="631" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">1</tspan>
-        <tspan x="631" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">=</tspan>
-        <tspan x="631" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾀ</tspan>
-        <tspan x="631" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">+</tspan>
-        <tspan x="631" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾑ</tspan>
-        <tspan x="631" y="119" fill="#00551e" fill-opacity="0.20" font-weight="normal">!</tspan>
-        <tspan x="631" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾕ</tspan>
-        <tspan x="631" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾐ</tspan>
-        <tspan x="631" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">-</tspan>
-        <tspan x="631" y="187" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾍ</tspan>
-        <tspan x="631" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｾ</tspan>
-        <tspan x="631" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">R</tspan>
-        <tspan x="631" y="238" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾅ</tspan>
-        <tspan x="631" y="255" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾜ</tspan>
-        <tspan x="631" y="272" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ｼ</tspan>
+    <g transform="translate(0, 18)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="641" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="641" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
+        <tspan x="641" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">{</tspan>
+        <tspan x="641" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">=</tspan>
+        <tspan x="641" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">9</tspan>
+        <tspan x="641" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">(</tspan>
+        <tspan x="641" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">{</tspan>
+        <tspan x="641" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">F</tspan>
+        <tspan x="641" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">)</tspan>
+        <tspan x="641" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">(</tspan>
       </text>
     </g>
-    <g transform="translate(0, 88)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="674" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">+</tspan>
-        <tspan x="674" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾃ</tspan>
-        <tspan x="674" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾅ</tspan>
-        <tspan x="674" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｼ</tspan>
-        <tspan x="674" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾜ</tspan>
-        <tspan x="674" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">9</tspan>
-        <tspan x="674" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">:</tspan>
-        <tspan x="674" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾀ</tspan>
-        <tspan x="674" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">X</tspan>
-        <tspan x="674" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">Y</tspan>
-        <tspan x="674" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾒ</tspan>
-        <tspan x="674" y="187" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ｰ</tspan>
-        <tspan x="674" y="204" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾍ</tspan>
+    <g transform="translate(0, -37)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="688" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="688" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
+        <tspan x="688" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
+        <tspan x="688" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
+        <tspan x="688" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
+        <tspan x="688" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
+        <tspan x="688" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">+</tspan>
+        <tspan x="688" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">C</tspan>
+        <tspan x="688" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">=</tspan>
+        <tspan x="688" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">:</tspan>
+        <tspan x="688" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="688" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">~</tspan>
+        <tspan x="688" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">[</tspan>
+        <tspan x="688" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">1</tspan>
       </text>
     </g>
-    <g transform="translate(0, 196)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="716" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">9</tspan>
-        <tspan x="716" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">1</tspan>
-        <tspan x="716" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">2</tspan>
-        <tspan x="716" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">#</tspan>
-        <tspan x="716" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾃ</tspan>
-        <tspan x="716" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｳ</tspan>
-        <tspan x="716" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｳ</tspan>
-        <tspan x="716" y="119" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｳ</tspan>
-        <tspan x="716" y="136" fill="#00551e" fill-opacity="0.20" font-weight="normal">:</tspan>
-        <tspan x="716" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">*</tspan>
-        <tspan x="716" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾆ</tspan>
-        <tspan x="716" y="187" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾈ</tspan>
-        <tspan x="716" y="204" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｶ</tspan>
-        <tspan x="716" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">Z</tspan>
-        <tspan x="716" y="238" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｽ</tspan>
-        <tspan x="716" y="255" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾐ</tspan>
-        <tspan x="716" y="272" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾊ</tspan>
-        <tspan x="716" y="289" fill="#ffffff" fill-opacity="0.95" font-weight="bold">+</tspan>
+    <g transform="translate(0, 10)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="735" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">~</tspan>
+        <tspan x="735" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">@</tspan>
+        <tspan x="735" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">1</tspan>
+        <tspan x="735" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
+        <tspan x="735" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
+        <tspan x="735" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">-</tspan>
+        <tspan x="735" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Y</tspan>
+        <tspan x="735" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
+        <tspan x="735" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
+        <tspan x="735" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">=</tspan>
+        <tspan x="735" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
+        <tspan x="735" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">X</tspan>
+        <tspan x="735" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
+        <tspan x="735" y="234" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">/</tspan>
+        <tspan x="735" y="252" fill="#ffffff" fill-opacity="0.9" font-weight="bold">Y</tspan>
       </text>
     </g>
-    <g transform="translate(0, -52)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="759" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾓ</tspan>
-        <tspan x="759" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">:</tspan>
-        <tspan x="759" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾀ</tspan>
-        <tspan x="759" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｶ</tspan>
-        <tspan x="759" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">7</tspan>
-        <tspan x="759" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">9</tspan>
-        <tspan x="759" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｷ</tspan>
-        <tspan x="759" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｻ</tspan>
-        <tspan x="759" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">-</tspan>
-        <tspan x="759" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾊ</tspan>
-        <tspan x="759" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾇ</tspan>
-        <tspan x="759" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾑ</tspan>
-        <tspan x="759" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">3</tspan>
-        <tspan x="759" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾈ</tspan>
-        <tspan x="759" y="238" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾋ</tspan>
-        <tspan x="759" y="255" fill="#ffffff" fill-opacity="0.95" font-weight="bold">?</tspan>
+    <g transform="translate(0, 194)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="781" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">=</tspan>
+        <tspan x="781" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Z</tspan>
+        <tspan x="781" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">[</tspan>
+        <tspan x="781" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
+        <tspan x="781" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
+        <tspan x="781" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
+        <tspan x="781" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">]</tspan>
+        <tspan x="781" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="781" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">[</tspan>
+        <tspan x="781" y="162" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">9</tspan>
+        <tspan x="781" y="180" fill="#ffffff" fill-opacity="0.9" font-weight="bold">Z</tspan>
       </text>
     </g>
-    <g transform="translate(0, 17)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="801" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">!</tspan>
-        <tspan x="801" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｰ</tspan>
-        <tspan x="801" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">!</tspan>
-        <tspan x="801" y="51" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾈ</tspan>
-        <tspan x="801" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾍ</tspan>
-        <tspan x="801" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">K</tspan>
-        <tspan x="801" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾇ</tspan>
-        <tspan x="801" y="119" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾀ</tspan>
-        <tspan x="801" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">2</tspan>
-        <tspan x="801" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾂ</tspan>
-        <tspan x="801" y="170" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾊ</tspan>
-        <tspan x="801" y="187" fill="#ffffff" fill-opacity="0.95" font-weight="bold">3</tspan>
+    <g transform="translate(0, -58)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="828" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">@</tspan>
+        <tspan x="828" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
+        <tspan x="828" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">9</tspan>
+        <tspan x="828" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
+        <tspan x="828" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Z</tspan>
+        <tspan x="828" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
+        <tspan x="828" y="108" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
+        <tspan x="828" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
+        <tspan x="828" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
+        <tspan x="828" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
+        <tspan x="828" y="180" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
+        <tspan x="828" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
+        <tspan x="828" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
+        <tspan x="828" y="234" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
+        <tspan x="828" y="252" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">7</tspan>
+        <tspan x="828" y="270" fill="#ffffff" fill-opacity="0.9" font-weight="bold">@</tspan>
       </text>
     </g>
-    <g transform="translate(0, 137)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="844" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾍ</tspan>
-        <tspan x="844" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾃ</tspan>
-        <tspan x="844" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｼ</tspan>
-        <tspan x="844" y="51" fill="#00cc52" fill-opacity="0.40" font-weight="normal">9</tspan>
-        <tspan x="844" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">R</tspan>
-        <tspan x="844" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">7</tspan>
-        <tspan x="844" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾜ</tspan>
-        <tspan x="844" y="119" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾇ</tspan>
-        <tspan x="844" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｹ</tspan>
-        <tspan x="844" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">Y</tspan>
-        <tspan x="844" y="170" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ｼ</tspan>
-        <tspan x="844" y="187" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ｹ</tspan>
+    <g transform="translate(0, 50)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="875" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
+        <tspan x="875" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
+        <tspan x="875" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">{</tspan>
+        <tspan x="875" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
+        <tspan x="875" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
+        <tspan x="875" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
+        <tspan x="875" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">@</tspan>
+        <tspan x="875" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">=</tspan>
+        <tspan x="875" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">Z</tspan>
+        <tspan x="875" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">0</tspan>
       </text>
     </g>
-    <g transform="translate(0, 30)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="887" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">8</tspan>
-        <tspan x="887" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">!</tspan>
-        <tspan x="887" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾑ</tspan>
-        <tspan x="887" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾅ</tspan>
-        <tspan x="887" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">=</tspan>
-        <tspan x="887" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">R</tspan>
-        <tspan x="887" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾕ</tspan>
-        <tspan x="887" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｷ</tspan>
-        <tspan x="887" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｰ</tspan>
-        <tspan x="887" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">=</tspan>
-        <tspan x="887" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">3</tspan>
-        <tspan x="887" y="187" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾈ</tspan>
-        <tspan x="887" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾕ</tspan>
-        <tspan x="887" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾐ</tspan>
-        <tspan x="887" y="238" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">?</tspan>
-        <tspan x="887" y="255" fill="#ffffff" fill-opacity="0.95" font-weight="bold">ﾈ</tspan>
+    <g transform="translate(0, 7)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="921" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
+        <tspan x="921" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
+        <tspan x="921" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
+        <tspan x="921" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
+        <tspan x="921" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">#</tspan>
+        <tspan x="921" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">*</tspan>
+        <tspan x="921" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">;</tspan>
+        <tspan x="921" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Y</tspan>
+        <tspan x="921" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">*</tspan>
+        <tspan x="921" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">9</tspan>
       </text>
     </g>
-    <g transform="translate(0, 142)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="929" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">8</tspan>
-        <tspan x="929" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾐ</tspan>
-        <tspan x="929" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">-</tspan>
-        <tspan x="929" y="51" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｰ</tspan>
-        <tspan x="929" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾀ</tspan>
-        <tspan x="929" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">-</tspan>
-        <tspan x="929" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">7</tspan>
-        <tspan x="929" y="119" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾀ</tspan>
-        <tspan x="929" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾋ</tspan>
-        <tspan x="929" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾀ</tspan>
-        <tspan x="929" y="170" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾊ</tspan>
-        <tspan x="929" y="187" fill="#ffffff" fill-opacity="0.95" font-weight="bold">:</tspan>
+    <g transform="translate(0, -6)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="968" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
+        <tspan x="968" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
+        <tspan x="968" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
+        <tspan x="968" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
+        <tspan x="968" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Z</tspan>
+        <tspan x="968" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">F</tspan>
+        <tspan x="968" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">=</tspan>
+        <tspan x="968" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">1</tspan>
+        <tspan x="968" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">#</tspan>
+        <tspan x="968" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">}</tspan>
       </text>
     </g>
-    <g transform="translate(0, -25)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="972" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">1</tspan>
-        <tspan x="972" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ｼ</tspan>
-        <tspan x="972" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾕ</tspan>
-        <tspan x="972" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">Y</tspan>
-        <tspan x="972" y="68" fill="#00551e" fill-opacity="0.20" font-weight="normal">7</tspan>
-        <tspan x="972" y="85" fill="#00551e" fill-opacity="0.20" font-weight="normal">K</tspan>
-        <tspan x="972" y="102" fill="#00551e" fill-opacity="0.20" font-weight="normal">0</tspan>
-        <tspan x="972" y="119" fill="#00551e" fill-opacity="0.20" font-weight="normal">9</tspan>
-        <tspan x="972" y="136" fill="#00cc52" fill-opacity="0.40" font-weight="normal">5</tspan>
-        <tspan x="972" y="153" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾎ</tspan>
-        <tspan x="972" y="170" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｼ</tspan>
-        <tspan x="972" y="187" fill="#00cc52" fill-opacity="0.40" font-weight="normal">1</tspan>
-        <tspan x="972" y="204" fill="#00ff66" fill-opacity="0.65" font-weight="normal">Z</tspan>
-        <tspan x="972" y="221" fill="#00ff66" fill-opacity="0.65" font-weight="normal">+</tspan>
-        <tspan x="972" y="238" fill="#00ff66" fill-opacity="0.65" font-weight="normal">?</tspan>
-        <tspan x="972" y="255" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾈ</tspan>
-        <tspan x="972" y="272" fill="#ffffff" fill-opacity="0.95" font-weight="bold">#</tspan>
-      </text>
-    </g>
-    <g transform="translate(0, 161)">
-      <text font-family="'Courier New', monospace" font-size="12" xml:space="preserve">
-        <tspan x="1015" y="0" fill="#00551e" fill-opacity="0.20" font-weight="normal">K</tspan>
-        <tspan x="1015" y="17" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾇ</tspan>
-        <tspan x="1015" y="34" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾜ</tspan>
-        <tspan x="1015" y="51" fill="#00551e" fill-opacity="0.20" font-weight="normal">ﾆ</tspan>
-        <tspan x="1015" y="68" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ﾃ</tspan>
-        <tspan x="1015" y="85" fill="#00cc52" fill-opacity="0.40" font-weight="normal">*</tspan>
-        <tspan x="1015" y="102" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｴ</tspan>
-        <tspan x="1015" y="119" fill="#00cc52" fill-opacity="0.40" font-weight="normal">ｽ</tspan>
-        <tspan x="1015" y="136" fill="#00ff66" fill-opacity="0.65" font-weight="normal">2</tspan>
-        <tspan x="1015" y="153" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ﾗ</tspan>
-        <tspan x="1015" y="170" fill="#00ff66" fill-opacity="0.65" font-weight="normal">ｳ</tspan>
-        <tspan x="1015" y="187" fill="#a3ffb8" fill-opacity="0.85" font-weight="bold">ﾈ</tspan>
-        <tspan x="1015" y="204" fill="#ffffff" fill-opacity="0.95" font-weight="bold">K</tspan>
+    <g transform="translate(0, -31)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
+        <tspan x="1015" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
+        <tspan x="1015" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
+        <tspan x="1015" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">*</tspan>
+        <tspan x="1015" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">@</tspan>
+        <tspan x="1015" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">A</tspan>
+        <tspan x="1015" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">9</tspan>
+        <tspan x="1015" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">{</tspan>
+        <tspan x="1015" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Z</tspan>
+        <tspan x="1015" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
+        <tspan x="1015" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">7</tspan>
+        <tspan x="1015" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
+        <tspan x="1015" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
+        <tspan x="1015" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">]</tspan>
+        <tspan x="1015" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">#</tspan>
       </text>
     </g>
     </g>
-    <!-- Translucent phosphor overlay to ensure foreground text is 100% crisp and readable -->
-    <rect x="5" y="44" width="1040" height="520" fill="#040a07" fill-opacity="0.72"/>
+    <!-- Translucent Dark Overlay for absolute readability -->
+    <rect x="5" y="42" width="1040" height="492" fill="#0b0e17" fill-opacity="0.76"/>
   </g>
 
   <!-- Title Bar -->
-  <path d="M 4 20 C 4 11.163 11.163 4 20 4 L 1030 4 C 1038.837 4 1046 11.163 1046 20 L 1046 44 L 4 44 Z" fill="#0b1710"/>
-  <line x1="4" y1="44" x2="1046" y2="44" stroke="#163824" stroke-width="1.2"/>
+  <path d="M 4 18 C 4 10.268 10.268 4 18 4 L 1032 4 C 1039.732 4 1046 10.268 1046 18 L 1046 42 L 4 42 Z" fill="#131722"/>
+  <line x1="4" y1="42" x2="1046" y2="42" stroke="#222838" stroke-width="1"/>
 
-  <!-- Window Buttons -->
-  <circle cx="26" cy="24" r="6.5" fill="#ff5f56"/>
-  <circle cx="46" cy="24" r="6.5" fill="#ffbd2e"/>
-  <circle cx="66" cy="24" r="6.5" fill="#27c93f"/>
+  <!-- Traffic Light Window Controls -->
+  <circle cx="26" cy="23" r="6" fill="#f7768e"/>
+  <circle cx="46" cy="23" r="6" fill="#e0af68"/>
+  <circle cx="66" cy="23" r="6" fill="#9ece6a"/>
 
-  <!-- Title Text -->
-  <g class="mono" font-size="12" fill="#7ee787">
-    <text x="525" y="28" text-anchor="middle" fill="#88bba0">nyzeep@matrix: ~ (fastfetch --geek --matrix)</text>
-    <circle cx="985" cy="24" r="4.5" fill="#00ff66"/>
-    <text x="996" y="28" font-size="11" fill="#00ff66" font-weight="700">ONLINE</text>
+  <!-- Window Title -->
+  <g class="mono" font-size="12" fill="#787c99">
+    <text x="525" y="27" text-anchor="middle">nyzeep@workbench: ~</text>
+    <circle cx="985" cy="24" r="4.5" fill="#7dcfff"/>
+    <text x="996" y="27" font-size="11" fill="#7dcfff" font-weight="600">ONLINE</text>
   </g>
 
-  <!-- Terminal Content Area -->
-  <g transform="translate(36, 76)" class="mono">
+  <!-- Terminal Content Canvas -->
+  <g transform="translate(36, 72)" class="mono">
 
-    <!-- Command Execution Prompt -->
-    <text y="0" font-size="14.5" xml:space="preserve">
-      <tspan fill="#00ff66" font-weight="700">nyzeep</tspan>
-      <tspan fill="#4e8c67">@</tspan>
-      <tspan fill="#00d9f5" font-weight="700">matrix</tspan>
-      <tspan fill="#4e8c67"> in </tspan>
-      <tspan fill="#a3ffb8" font-weight="600">~</tspan>
-      <tspan fill="#00ff66" font-weight="700"> ❯ </tspan>
-      <tspan fill="#f0f6fc">fastfetch --config matrix.json</tspan>
+    <!-- Shell Execution Line -->
+    <text y="0" font-size="14" xml:space="preserve">
+      <tspan fill="#7dcfff" font-weight="700">nyzeep</tspan>
+      <tspan fill="#565f89">@</tspan>
+      <tspan fill="#bb9af7" font-weight="600">workbench</tspan>
+      <tspan fill="#565f89"> in </tspan>
+      <tspan fill="#7aa2f7">~</tspan>
+      <tspan fill="#7dcfff" font-weight="700"> ❯ </tspan>
+      <tspan fill="#f0f6fc">fastfetch</tspan>
     </text>
 
-    <!-- Centerpiece: TUI Banner & Tagline -->
-    <g transform="translate(0, 18)">
-      <!-- Luminous TUI Username -->
-      <text font-size="14" fill="url(#tui-matrix)" font-weight="900" filter="url(#matrix-glow)" xml:space="preserve">
+    <!-- Visual Anchor: TUI Username Banner -->
+    <g transform="translate(0, 16)">
+      <text font-size="14" fill="url(#tui-grad)" font-weight="900" filter="url(#neon-glow)" xml:space="preserve">
         <tspan x="0" y="20">███╗   ██╗██╗   ██╗███████╗███████╗███████╗██████╗ </tspan>
         <tspan x="0" y="39">████╗  ██║╚██╗ ██╔╝╚══███╔╝██╔════╝██╔════╝██╔══██╗</tspan>
         <tspan x="0" y="58">██╔██╗ ██║ ╚████╔╝   ███╔╝ █████╗  █████╗  ██████╔╝</tspan>
@@ -581,118 +497,106 @@
         <tspan x="0" y="115">╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     </tspan>
       </text>
 
-      <!-- Subtitle Terminal Badge -->
-      <g transform="translate(540, 24)">
-        <rect width="438" height="88" rx="8" fill="url(#panel-bg)" stroke="#1a472a" stroke-width="1.2"/>
-        <line x1="0" y1="28" x2="438" y2="28" stroke="#1a472a" stroke-width="1"/>
-        <text x="16" y="19" font-size="11" fill="#00d9f5" font-weight="700" letter-spacing="1">AGENTIC CORE // MATRIX PROFILE</text>
-        <circle cx="418" cy="14" r="3.5" fill="#00ff66"/>
+      <!-- Clean Mission Badge on Right -->
+      <g transform="translate(540, 20)">
+        <rect width="438" height="92" rx="8" fill="url(#panel-card)" stroke="#28344e" stroke-width="1"/>
+        <line x1="0" y1="28" x2="438" y2="28" stroke="#28344e" stroke-width="1"/>
+        <text x="16" y="19" font-size="11" fill="#7dcfff" font-weight="700" letter-spacing="1">PROFILE // SUMMARY</text>
+        <circle cx="420" cy="14" r="3" fill="#7dcfff"/>
 
-        <text x="16" y="50" font-size="12" fill="#7ee787">MISSION :: <tspan fill="#f0f6fc">Make it useful, then make it delightful</tspan></text>
-        <text x="16" y="72" font-size="12" fill="#7ee787">STATUS  :: <tspan fill="#00ff88" font-weight="600">● 100% OPERATIONAL</tspan> · <tspan fill="#00d9f5">Building AI DevTools</tspan></text>
+        <text x="16" y="52" font-size="12.5" fill="#787c99">ROLE    :: <tspan fill="#c0caf5">AI Agent Tooling &amp; Open Source Explorer</tspan></text>
+        <text x="16" y="74" font-size="12.5" fill="#787c99">MOTTO   :: <tspan fill="#7dcfff">Make it useful, then make it delightful</tspan></text>
       </g>
     </g>
 
-    <!-- Clean Divider Line -->
-    <g transform="translate(0, 156)">
-      <line x1="0" y1="0" x2="978" y2="0" stroke="#1a472a" stroke-width="1.2" stroke-dasharray="6 4"/>
-      <circle cx="489" cy="0" r="3" fill="#00ff66"/>
-    </g>
+    <!-- Subtle Horizontal Divider -->
+    <line x1="0" y1="156" x2="978" y2="156" stroke="#222838" stroke-width="1" stroke-dasharray="5 4"/>
 
-    <!-- Structured 2-Panel Specifications -->
-    <g transform="translate(0, 182)">
+    <!-- Simplified, High-Signal 2-Panel Specifications -->
+    <g transform="translate(0, 178)">
 
-      <!-- Panel 1: System Runtime (4 Clear Rows) -->
+      <!-- Panel 1: System Environment (3 high-value rows) -->
       <g transform="translate(0, 0)">
-        <rect width="470" height="152" rx="10" fill="url(#panel-bg)" stroke="#1a472a" stroke-width="1.2"/>
-        <rect width="470" height="28" rx="10" fill="#0b1e14"/>
-        <line x1="0" y1="28" x2="470" y2="28" stroke="#1a472a" stroke-width="1"/>
-        <text x="16" y="19" class="panel-header">01 // SYSTEM RUNTIME</text>
+        <rect width="470" height="132" rx="8" fill="url(#panel-card)" stroke="#28344e" stroke-width="1"/>
+        <rect width="470" height="26" rx="8" fill="#131726"/>
+        <line x1="0" y1="26" x2="470" y2="26" stroke="#28344e" stroke-width="1"/>
+        <text x="16" y="18" class="panel-hdr">01 // PLATFORM &amp; RUNTIME</text>
 
-        <g transform="translate(16, 54)">
+        <g transform="translate(16, 52)">
           <text y="0" xml:space="preserve">
-            <tspan class="lbl">OS</tspan>
+            <tspan class="key">OS</tspan>
             <tspan class="sep"> ─────── </tspan>
             <tspan class="val">Arch Linux x86_64</tspan>
           </text>
-          <text y="26" xml:space="preserve">
-            <tspan class="lbl">Host</tspan>
+          <text y="28" xml:space="preserve">
+            <tspan class="key">Host</tspan>
             <tspan class="sep"> ───── </tspan>
             <tspan class="val">DeepSeek Harness Station</tspan>
           </text>
-          <text y="52" xml:space="preserve">
-            <tspan class="lbl">Shell</tspan>
+          <text y="56" xml:space="preserve">
+            <tspan class="key">Shell</tspan>
             <tspan class="sep"> ──── </tspan>
             <tspan class="val">zsh 5.9 + starship</tspan>
-          </text>
-          <text y="78" xml:space="preserve">
-            <tspan class="lbl">Uptime</tspan>
-            <tspan class="sep"> ─── </tspan>
-            <tspan class="val-yellow">24/7</tspan>
-            <tspan class="val"> (Deep Work &amp; Open Source)</tspan>
           </text>
         </g>
       </g>
 
-      <!-- Panel 2: Build & Arsenal (4 Clear Rows) -->
+      <!-- Panel 2: Stack & Featured Projects (3 high-value rows) -->
       <g transform="translate(508, 0)">
-        <rect width="470" height="152" rx="10" fill="url(#panel-bg)" stroke="#1a472a" stroke-width="1.2"/>
-        <rect width="470" height="28" rx="10" fill="#0b1e14"/>
-        <line x1="0" y1="28" x2="470" y2="28" stroke="#1a472a" stroke-width="1"/>
-        <text x="16" y="19" class="panel-header">02 // BUILD &amp; ARSENAL</text>
+        <rect width="470" height="132" rx="8" fill="url(#panel-card)" stroke="#28344e" stroke-width="1"/>
+        <rect width="470" height="26" rx="8" fill="#131726"/>
+        <line x1="0" y1="26" x2="470" y2="26" stroke="#28344e" stroke-width="1"/>
+        <text x="16" y="18" class="panel-hdr">02 // STACK &amp; PROJECTS</text>
 
-        <g transform="translate(16, 54)">
+        <g transform="translate(16, 52)">
           <text y="0" xml:space="preserve">
-            <tspan class="lbl">Domain</tspan>
-            <tspan class="sep"> ─── </tspan>
-            <tspan class="val-cyan">AI Agent Tooling</tspan>
+            <tspan class="key">Focus</tspan>
+            <tspan class="sep"> ──── </tspan>
+            <tspan class="val-highlight">AI Agent Tooling</tspan>
             <tspan class="val"> · Dev Experience</tspan>
           </text>
-          <text y="26" xml:space="preserve">
-            <tspan class="lbl">Stack</tspan>
+          <text y="28" xml:space="preserve">
+            <tspan class="key">Stack</tspan>
             <tspan class="sep"> ──── </tspan>
             <tspan class="val">Rust · TypeScript · Python · Vue</tspan>
           </text>
-          <text y="52" xml:space="preserve">
-            <tspan class="lbl">Projects</tspan>
-            <tspan class="sep"> ─ </tspan>
-            <tspan class="val">Halo-Studio · dsh-material-icons</tspan>
-          </text>
-          <text y="78" xml:space="preserve">
-            <tspan class="lbl">Status</tspan>
+          <text y="56" xml:space="preserve">
+            <tspan class="key">Active</tspan>
             <tspan class="sep"> ─── </tspan>
-            <tspan class="val" fill="#00ff88">● Engineering Verifiable Workflows 🚀</tspan>
+            <tspan class="val-accent">Halo-Studio</tspan>
+            <tspan class="sep"> · </tspan>
+            <tspan class="val">dsh-material-file-icons</tspan>
           </text>
         </g>
       </g>
     </g>
 
-    <!-- Bottom Section: ANSI Color Palette & Next Shell Prompt -->
-    <g transform="translate(0, 368)">
-      <!-- 8 Classic Terminal ANSI Color Blocks -->
+    <!-- Bottom Section: Tokyo Night Color Palette & Terminal Prompt -->
+    <g transform="translate(0, 344)">
+      <!-- 8 Tokyo Night Palette Blocks -->
       <g transform="translate(0, 0)">
-        <rect x="0" y="0" width="46" height="15" rx="3" fill="#0a1810" stroke="#1a472a" stroke-width="1"/>
-        <rect x="54" y="0" width="46" height="15" rx="3" fill="#ff5f56"/>
-        <rect x="108" y="0" width="46" height="15" rx="3" fill="#00ff66"/>
-        <rect x="162" y="0" width="46" height="15" rx="3" fill="#ffbd2e"/>
-        <rect x="216" y="0" width="46" height="15" rx="3" fill="#00d9f5"/>
-        <rect x="270" y="0" width="46" height="15" rx="3" fill="#bd93f9"/>
-        <rect x="324" y="0" width="46" height="15" rx="3" fill="#00f5a0"/>
-        <rect x="378" y="0" width="46" height="15" rx="3" fill="#f0f6fc"/>
+        <rect x="0" y="0" width="46" height="14" rx="3" fill="#1f2335" stroke="#28344e" stroke-width="1"/>
+        <rect x="54" y="0" width="46" height="14" rx="3" fill="#f7768e"/>
+        <rect x="108" y="0" width="46" height="14" rx="3" fill="#9ece6a"/>
+        <rect x="162" y="0" width="46" height="14" rx="3" fill="#e0af68"/>
+        <rect x="216" y="0" width="46" height="14" rx="3" fill="#7aa2f7"/>
+        <rect x="270" y="0" width="46" height="14" rx="3" fill="#bb9af7"/>
+        <rect x="324" y="0" width="46" height="14" rx="3" fill="#7dcfff"/>
+        <rect x="378" y="0" width="46" height="14" rx="3" fill="#c0caf5"/>
       </g>
 
-      <!-- Next Terminal Prompt Line with Blinking Phosphor Cursor -->
-      <g transform="translate(0, 40)">
-        <text font-size="14.5" xml:space="preserve">
-          <tspan fill="#00ff66" font-weight="700">nyzeep</tspan>
-          <tspan fill="#4e8c67">@</tspan>
-          <tspan fill="#00d9f5" font-weight="700">matrix</tspan>
-          <tspan fill="#4e8c67"> in </tspan>
-          <tspan fill="#a3ffb8" font-weight="600">~</tspan>
-          <tspan fill="#00ff66" font-weight="700"> ❯ </tspan>
-          <tspan fill="#f0f6fc">whoami --geek</tspan>
+      <!-- Next Terminal Prompt Line with Blinking Cursor -->
+      <g transform="translate(0, 36)">
+        <text font-size="14" xml:space="preserve">
+          <tspan fill="#7dcfff" font-weight="700">nyzeep</tspan>
+          <tspan fill="#565f89">@</tspan>
+          <tspan fill="#bb9af7" font-weight="600">workbench</tspan>
+          <tspan fill="#565f89"> in </tspan>
+          <tspan fill="#7aa2f7">~</tspan>
+          <tspan fill="#7dcfff" font-weight="700"> ❯ </tspan>
+          <tspan fill="#c0caf5">cat profile.json</tspan>
         </text>
-        <rect x="236" y="-13" width="9" height="17" fill="#00ff66" opacity="0.9"/>
+        <rect x="235" y="-13" width="9" height="17" fill="#7dcfff" opacity="0.9"/>
       </g>
     </g>
 
