@@ -122,7 +122,6 @@
 
 ---
 
-```bash
-nyzeep@workbench:~$ exit 0
-[Session closed · Say hello on GitHub]
-```
+<div align="center">
+  <sub>Make it useful, then make it delightful · <a href="https://github.com/Nyzeep">say hello on GitHub</a></sub>
+</div>

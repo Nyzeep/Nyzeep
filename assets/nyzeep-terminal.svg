@@ -1,55 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="540" viewBox="0 0 1050 540" role="img" aria-label="Nyzeep Developer Terminal">
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="520" viewBox="0 0 1050 520" role="img" aria-label="Nyzeep Chromatic Terminal Profile">
   <defs>
-    <!-- Background Gradient (Tokyo Night / Deep Slate) -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0e14"/>
-      <stop offset="50%" stop-color="#111624"/>
-      <stop offset="100%" stop-color="#0a0d14"/>
+    <!-- Deep Obsidian Slate Background -->
+    <linearGradient id="obsidian-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#0f1422"/>
+      <stop offset="100%" stop-color="#090c13"/>
     </linearGradient>
 
     <!-- Subtle Border Glow -->
-    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7dcfff" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#3b4261" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#bb9af7" stop-opacity="0.6"/>
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.6"/>
+      <stop offset="35%" stop-color="#7000ff" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#ff007f" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.6"/>
     </linearGradient>
 
-    <!-- TUI Text Gradient (Cyan -> Electric Blue -> Lavender) -->
-    <linearGradient id="tui-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7dcfff"/>
-      <stop offset="45%" stop-color="#7aa2f7"/>
-      <stop offset="85%" stop-color="#bb9af7"/>
-      <stop offset="100%" stop-color="#c0caf5"/>
+    <!-- Dynamic Flowing Chromatic Gradient (Perfect 2x Period for Seamless Indefinite Loop) -->
+    <linearGradient id="chroma-flow" x1="0%" y1="0%" x2="200%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="8.3%" stop-color="#4361ee"/>
+      <stop offset="16.6%" stop-color="#7000ff"/>
+      <stop offset="25%" stop-color="#b5179e"/>
+      <stop offset="33.3%" stop-color="#f72585"/>
+      <stop offset="41.6%" stop-color="#ff6b6b"/>
+      <stop offset="50%" stop-color="#ffb703"/>
+      <stop offset="58.3%" stop-color="#00f0ff"/>
+      <stop offset="66.6%" stop-color="#4361ee"/>
+      <stop offset="75%" stop-color="#7000ff"/>
+      <stop offset="83.3%" stop-color="#b5179e"/>
+      <stop offset="91.6%" stop-color="#f72585"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+      
+      <animate attributeName="x1" values="0%; -100%" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="200%; 100%" dur="5s" repeatCount="indefinite"/>
+    
     </linearGradient>
 
-    <!-- Panel Card Background -->
-    <linearGradient id="panel-card" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#161c2c" stop-opacity="0.82"/>
-      <stop offset="100%" stop-color="#101422" stop-opacity="0.82"/>
+    <!-- Spec Box Background -->
+    <linearGradient id="spec-box-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a2b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0e121e" stop-opacity="0.85"/>
     </linearGradient>
 
-    <!-- Neon Glow Filter -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+    <!-- Luminous Chromatic Glow -->
+    <filter id="chroma-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- Subtle Ambient Dots Pattern -->
+    <pattern id="dot-matrix" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#565f89" fill-opacity="0.08"/>
+    </pattern>
   </defs>
 
   <style>
     .mono {
       font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
     }
-    .panel-hdr {
-      fill: #7dcfff;
+    .hdr-title {
+      fill: #8f9bb3;
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
     }
     .key {
-      fill: #7aa2f7;
+      fill: #00f0ff;
       font-weight: 600;
       font-size: 13.5px;
     }
@@ -58,462 +75,278 @@
       font-size: 13.5px;
     }
     .val {
-      fill: #c0caf5;
-      font-size: 13.5px;
-    }
-    .val-highlight {
-      fill: #7dcfff;
-      font-weight: 600;
+      fill: #f0f6fc;
       font-size: 13.5px;
     }
     .val-accent {
-      fill: #bb9af7;
+      fill: #ffb703;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+    .val-purple {
+      fill: #b5179e;
+      font-weight: 600;
       font-size: 13.5px;
     }
   </style>
 
   <!-- Terminal Window Background -->
-  <rect x="4" y="4" width="1042" height="532" rx="14" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="1.2"/>
+  <rect x="4" y="4" width="1042" height="512" rx="14" fill="url(#obsidian-bg)" stroke="url(#border-glow)" stroke-width="1.3"/>
+  <rect x="4" y="4" width="1042" height="512" rx="14" fill="url(#dot-matrix)"/>
 
-  <!-- Background Digital Code Rain Layer (Subtle, non-intrusive) -->
-  <g clip-path="url(#window-clip)">
-    <clipPath id="window-clip">
-      <rect x="5" y="42" width="1040" height="492" rx="0"/>
+  <!-- Clean, Sparse Ambient Code Stream Background -->
+  <g clip-path="url(#term-clip)">
+    <clipPath id="term-clip">
+      <rect x="5" y="42" width="1040" height="472" rx="0"/>
     </clipPath>
-    <g opacity="0.22">
+    <g opacity="0.20">
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.24s" begin="-2.26s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="35" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
-        <tspan x="35" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
-        <tspan x="35" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
-        <tspan x="35" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
-        <tspan x="35" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
-        <tspan x="35" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">C</tspan>
-        <tspan x="35" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">+</tspan>
-        <tspan x="35" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">+</tspan>
-        <tspan x="35" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
-        <tspan x="35" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">]</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="4.66s" begin="-2.97s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="45" y="0">F</tspan>
+        <tspan x="45" y="20">0</tspan>
+        <tspan x="45" y="40">{</tspan>
+        <tspan x="45" y="60">9</tspan>
+        <tspan x="45" y="80">9</tspan>
+        <tspan x="45" y="100">X</tspan>
+        <tspan x="45" y="120">F</tspan>
+        <tspan x="45" y="140">#</tspan>
+        <tspan x="45" y="160">A</tspan>
+        <tspan x="45" y="180">+</tspan>
+        <tspan x="45" y="200">1</tspan>
+        <tspan x="45" y="220">0</tspan>
+        <tspan x="45" y="240">A</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.37s" begin="-0.93s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="81" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="81" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="81" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="81" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="81" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="81" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">*</tspan>
-        <tspan x="81" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="81" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">C</tspan>
-        <tspan x="81" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">0</tspan>
-        <tspan x="81" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">+</tspan>
-        <tspan x="81" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">A</tspan>
-        <tspan x="81" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">F</tspan>
-        <tspan x="81" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">9</tspan>
-        <tspan x="81" y="234" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">@</tspan>
-        <tspan x="81" y="252" fill="#ffffff" fill-opacity="0.9" font-weight="bold">F</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="6.28s" begin="-5.04s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="132" y="0">#</tspan>
+        <tspan x="132" y="20">7</tspan>
+        <tspan x="132" y="40">#</tspan>
+        <tspan x="132" y="60">+</tspan>
+        <tspan x="132" y="80">9</tspan>
+        <tspan x="132" y="100">-</tspan>
+        <tspan x="132" y="120">{</tspan>
+        <tspan x="132" y="140">0</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.09s" begin="-2.21s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="128" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="128" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">=</tspan>
-        <tspan x="128" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
-        <tspan x="128" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
-        <tspan x="128" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">[</tspan>
-        <tspan x="128" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
-        <tspan x="128" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">}</tspan>
-        <tspan x="128" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">}</tspan>
-        <tspan x="128" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
-        <tspan x="128" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">[</tspan>
-        <tspan x="128" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">;</tspan>
-        <tspan x="128" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="128" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
-        <tspan x="128" y="234" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">A</tspan>
-        <tspan x="128" y="252" fill="#ffffff" fill-opacity="0.9" font-weight="bold">;</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="5.81s" begin="-1.16s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="219" y="0">/</tspan>
+        <tspan x="219" y="20">{</tspan>
+        <tspan x="219" y="40">X</tspan>
+        <tspan x="219" y="60">7</tspan>
+        <tspan x="219" y="80">/</tspan>
+        <tspan x="219" y="100">F</tspan>
+        <tspan x="219" y="120">A</tspan>
+        <tspan x="219" y="140">*</tspan>
+        <tspan x="219" y="160">F</tspan>
+        <tspan x="219" y="180">~</tspan>
+        <tspan x="219" y="200">~</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.4s" begin="-4.55s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="175" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">9</tspan>
-        <tspan x="175" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
-        <tspan x="175" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">X</tspan>
-        <tspan x="175" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
-        <tspan x="175" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="175" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="175" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">*</tspan>
-        <tspan x="175" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">9</tspan>
-        <tspan x="175" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
-        <tspan x="175" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">:</tspan>
-        <tspan x="175" y="180" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">}</tspan>
-        <tspan x="175" y="198" fill="#ffffff" fill-opacity="0.9" font-weight="bold">}</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="6.96s" begin="-0.87s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="306" y="0">-</tspan>
+        <tspan x="306" y="20">#</tspan>
+        <tspan x="306" y="40">F</tspan>
+        <tspan x="306" y="60">*</tspan>
+        <tspan x="306" y="80">A</tspan>
+        <tspan x="306" y="100">#</tspan>
+        <tspan x="306" y="120">}</tspan>
+        <tspan x="306" y="140">~</tspan>
+        <tspan x="306" y="160">7</tspan>
+        <tspan x="306" y="180">A</tspan>
+        <tspan x="306" y="200">1</tspan>
+        <tspan x="306" y="220">9</tspan>
+        <tspan x="306" y="240">}</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.61s" begin="-2.6s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="221" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">~</tspan>
-        <tspan x="221" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="221" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
-        <tspan x="221" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
-        <tspan x="221" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
-        <tspan x="221" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
-        <tspan x="221" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">#</tspan>
-        <tspan x="221" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">+</tspan>
-        <tspan x="221" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
-        <tspan x="221" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">[</tspan>
-        <tspan x="221" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="221" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">7</tspan>
-        <tspan x="221" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">]</tspan>
-        <tspan x="221" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">*</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="4.49s" begin="-3.72s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="394" y="0">F</tspan>
+        <tspan x="394" y="20">*</tspan>
+        <tspan x="394" y="40">{</tspan>
+        <tspan x="394" y="60">-</tspan>
+        <tspan x="394" y="80">~</tspan>
+        <tspan x="394" y="100">Z</tspan>
+        <tspan x="394" y="120">~</tspan>
+        <tspan x="394" y="140">~</tspan>
+        <tspan x="394" y="160">7</tspan>
+        <tspan x="394" y="180">{</tspan>
+        <tspan x="394" y="200">A</tspan>
+        <tspan x="394" y="220">Z</tspan>
+        <tspan x="394" y="240">#</tspan>
+        <tspan x="394" y="260">9</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.32s" begin="-4.29s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="268" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
-        <tspan x="268" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">0</tspan>
-        <tspan x="268" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">*</tspan>
-        <tspan x="268" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">C</tspan>
-        <tspan x="268" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="268" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">X</tspan>
-        <tspan x="268" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">@</tspan>
-        <tspan x="268" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">1</tspan>
-        <tspan x="268" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="268" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="268" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">=</tspan>
-        <tspan x="268" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">F</tspan>
-        <tspan x="268" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">:</tspan>
-        <tspan x="268" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">+</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="5.97s" begin="-3.63s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="481" y="0">#</tspan>
+        <tspan x="481" y="20">9</tspan>
+        <tspan x="481" y="40">/</tspan>
+        <tspan x="481" y="60">1</tspan>
+        <tspan x="481" y="80">9</tspan>
+        <tspan x="481" y="100">1</tspan>
+        <tspan x="481" y="120">/</tspan>
+        <tspan x="481" y="140">*</tspan>
+        <tspan x="481" y="160">{</tspan>
+        <tspan x="481" y="180">A</tspan>
+        <tspan x="481" y="200">7</tspan>
+        <tspan x="481" y="220">/</tspan>
+        <tspan x="481" y="240">7</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.94s" begin="-3.46s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="315" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
-        <tspan x="315" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">-</tspan>
-        <tspan x="315" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="315" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="315" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">=</tspan>
-        <tspan x="315" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
-        <tspan x="315" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">:</tspan>
-        <tspan x="315" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">~</tspan>
-        <tspan x="315" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">7</tspan>
-        <tspan x="315" y="162" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">~</tspan>
-        <tspan x="315" y="180" fill="#ffffff" fill-opacity="0.9" font-weight="bold">[</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="5.53s" begin="-5.45s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="568" y="0">-</tspan>
+        <tspan x="568" y="20">X</tspan>
+        <tspan x="568" y="40">{</tspan>
+        <tspan x="568" y="60">X</tspan>
+        <tspan x="568" y="80">9</tspan>
+        <tspan x="568" y="100">#</tspan>
+        <tspan x="568" y="120">#</tspan>
+        <tspan x="568" y="140">{</tspan>
+        <tspan x="568" y="160">+</tspan>
+        <tspan x="568" y="180">*</tspan>
+        <tspan x="568" y="200">~</tspan>
+        <tspan x="568" y="220">9</tspan>
+        <tspan x="568" y="240">X</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.7s" begin="-0.98s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="361" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">-</tspan>
-        <tspan x="361" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">/</tspan>
-        <tspan x="361" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
-        <tspan x="361" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="361" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
-        <tspan x="361" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">[</tspan>
-        <tspan x="361" y="108" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
-        <tspan x="361" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Y</tspan>
-        <tspan x="361" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">9</tspan>
-        <tspan x="361" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">@</tspan>
-        <tspan x="361" y="180" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
-        <tspan x="361" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">0</tspan>
-        <tspan x="361" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">1</tspan>
-        <tspan x="361" y="234" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">X</tspan>
-        <tspan x="361" y="252" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">-</tspan>
-        <tspan x="361" y="270" fill="#ffffff" fill-opacity="0.9" font-weight="bold">+</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="5.59s" begin="-0.17s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="655" y="0">F</tspan>
+        <tspan x="655" y="20">X</tspan>
+        <tspan x="655" y="40">Z</tspan>
+        <tspan x="655" y="60">+</tspan>
+        <tspan x="655" y="80">A</tspan>
+        <tspan x="655" y="100">*</tspan>
+        <tspan x="655" y="120">*</tspan>
+        <tspan x="655" y="140">-</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.93s" begin="-4.83s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="408" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">}</tspan>
-        <tspan x="408" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
-        <tspan x="408" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
-        <tspan x="408" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
-        <tspan x="408" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
-        <tspan x="408" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="408" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
-        <tspan x="408" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">#</tspan>
-        <tspan x="408" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">@</tspan>
-        <tspan x="408" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">)</tspan>
-        <tspan x="408" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
-        <tspan x="408" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">]</tspan>
-        <tspan x="408" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">~</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="5.52s" begin="-5.36s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="743" y="0">0</tspan>
+        <tspan x="743" y="20">F</tspan>
+        <tspan x="743" y="40">#</tspan>
+        <tspan x="743" y="60">{</tspan>
+        <tspan x="743" y="80">/</tspan>
+        <tspan x="743" y="100">F</tspan>
+        <tspan x="743" y="120">}</tspan>
+        <tspan x="743" y="140">+</tspan>
+        <tspan x="743" y="160">Z</tspan>
+        <tspan x="743" y="180">-</tspan>
+        <tspan x="743" y="200">0</tspan>
+        <tspan x="743" y="220">{</tspan>
+        <tspan x="743" y="240">:</tspan>
+        <tspan x="743" y="260">Z</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.71s" begin="-0.79s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="455" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
-        <tspan x="455" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
-        <tspan x="455" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
-        <tspan x="455" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
-        <tspan x="455" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="455" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="455" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="455" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
-        <tspan x="455" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="455" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">7</tspan>
-        <tspan x="455" y="180" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">(</tspan>
-        <tspan x="455" y="198" fill="#ffffff" fill-opacity="0.9" font-weight="bold">Z</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="6.79s" begin="-0.73s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="830" y="0">}</tspan>
+        <tspan x="830" y="20">:</tspan>
+        <tspan x="830" y="40">7</tspan>
+        <tspan x="830" y="60">X</tspan>
+        <tspan x="830" y="80">~</tspan>
+        <tspan x="830" y="100">Z</tspan>
+        <tspan x="830" y="120">#</tspan>
+        <tspan x="830" y="140">:</tspan>
+        <tspan x="830" y="160">0</tspan>
+        <tspan x="830" y="180">/</tspan>
+        <tspan x="830" y="200">=</tspan>
+        <tspan x="830" y="220">0</tspan>
+        <tspan x="830" y="240">F</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="3.2s" begin="-2.1s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="501" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">A</tspan>
-        <tspan x="501" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">-</tspan>
-        <tspan x="501" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
-        <tspan x="501" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="501" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">}</tspan>
-        <tspan x="501" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
-        <tspan x="501" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Y</tspan>
-        <tspan x="501" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">;</tspan>
-        <tspan x="501" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">]</tspan>
-        <tspan x="501" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">X</tspan>
-        <tspan x="501" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">(</tspan>
-        <tspan x="501" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">0</tspan>
-        <tspan x="501" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">A</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="4.8s" begin="-0.77s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="917" y="0">}</tspan>
+        <tspan x="917" y="20">9</tspan>
+        <tspan x="917" y="40">1</tspan>
+        <tspan x="917" y="60">9</tspan>
+        <tspan x="917" y="80">A</tspan>
+        <tspan x="917" y="100">A</tspan>
+        <tspan x="917" y="120">=</tspan>
+        <tspan x="917" y="140">A</tspan>
+        <tspan x="917" y="160">#</tspan>
+        <tspan x="917" y="180">X</tspan>
+        <tspan x="917" y="200">X</tspan>
+        <tspan x="917" y="220">=</tspan>
+        <tspan x="917" y="240">#</tspan>
+        <tspan x="917" y="260">Z</tspan>
       </text>
     </g>
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="3.21s" begin="-1.68s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="548" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">A</tspan>
-        <tspan x="548" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
-        <tspan x="548" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
-        <tspan x="548" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
-        <tspan x="548" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">C</tspan>
-        <tspan x="548" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
-        <tspan x="548" y="108" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
-        <tspan x="548" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">1</tspan>
-        <tspan x="548" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">#</tspan>
-        <tspan x="548" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
-        <tspan x="548" y="180" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">7</tspan>
-        <tspan x="548" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">=</tspan>
-        <tspan x="548" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">#</tspan>
-        <tspan x="548" y="234" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
-        <tspan x="548" y="252" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">}</tspan>
-        <tspan x="548" y="270" fill="#ffffff" fill-opacity="0.9" font-weight="bold">X</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="3.42s" begin="-1.66s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="595" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="595" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="595" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
-        <tspan x="595" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">;</tspan>
-        <tspan x="595" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">X</tspan>
-        <tspan x="595" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
-        <tspan x="595" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">C</tspan>
-        <tspan x="595" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
-        <tspan x="595" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">*</tspan>
-        <tspan x="595" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">X</tspan>
-        <tspan x="595" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">+</tspan>
-        <tspan x="595" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">:</tspan>
-        <tspan x="595" y="216" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">/</tspan>
-        <tspan x="595" y="234" fill="#ffffff" fill-opacity="0.9" font-weight="bold">9</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="3.71s" begin="-4.93s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="641" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
-        <tspan x="641" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">%</tspan>
-        <tspan x="641" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">*</tspan>
-        <tspan x="641" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">9</tspan>
-        <tspan x="641" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
-        <tspan x="641" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
-        <tspan x="641" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">[</tspan>
-        <tspan x="641" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
-        <tspan x="641" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">X</tspan>
-        <tspan x="641" y="162" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">/</tspan>
-        <tspan x="641" y="180" fill="#ffffff" fill-opacity="0.9" font-weight="bold">%</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.53s" begin="-3.36s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="688" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">[</tspan>
-        <tspan x="688" y="18" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">A</tspan>
-        <tspan x="688" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">1</tspan>
-        <tspan x="688" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">@</tspan>
-        <tspan x="688" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">}</tspan>
-        <tspan x="688" y="90" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
-        <tspan x="688" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">}</tspan>
-        <tspan x="688" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">#</tspan>
-        <tspan x="688" y="144" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">0</tspan>
-        <tspan x="688" y="162" fill="#ffffff" fill-opacity="0.9" font-weight="bold">0</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="3.74s" begin="-1.88s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="735" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
-        <tspan x="735" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
-        <tspan x="735" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">F</tspan>
-        <tspan x="735" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
-        <tspan x="735" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="735" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">*</tspan>
-        <tspan x="735" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">+</tspan>
-        <tspan x="735" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
-        <tspan x="735" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Z</tspan>
-        <tspan x="735" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">X</tspan>
-        <tspan x="735" y="180" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">*</tspan>
-        <tspan x="735" y="198" fill="#ffffff" fill-opacity="0.9" font-weight="bold">/</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.62s" begin="-0.81s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="781" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">+</tspan>
-        <tspan x="781" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">C</tspan>
-        <tspan x="781" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">=</tspan>
-        <tspan x="781" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">:</tspan>
-        <tspan x="781" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">A</tspan>
-        <tspan x="781" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
-        <tspan x="781" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">[</tspan>
-        <tspan x="781" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">1</tspan>
-        <tspan x="781" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Y</tspan>
-        <tspan x="781" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
-        <tspan x="781" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Z</tspan>
-        <tspan x="781" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">1</tspan>
-        <tspan x="781" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">-</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.53s" begin="-4.31s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="828" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">#</tspan>
-        <tspan x="828" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">-</tspan>
-        <tspan x="828" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Y</tspan>
-        <tspan x="828" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">)</tspan>
-        <tspan x="828" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">:</tspan>
-        <tspan x="828" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">=</tspan>
-        <tspan x="828" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">0</tspan>
-        <tspan x="828" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">X</tspan>
-        <tspan x="828" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">-</tspan>
-        <tspan x="828" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="828" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Y</tspan>
-        <tspan x="828" y="198" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">%</tspan>
-        <tspan x="828" y="216" fill="#ffffff" fill-opacity="0.9" font-weight="bold">/</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.8s" begin="-0.93s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="875" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Z</tspan>
-        <tspan x="875" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">[</tspan>
-        <tspan x="875" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">7</tspan>
-        <tspan x="875" y="54" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
-        <tspan x="875" y="72" fill="#3b4261" fill-opacity="0.18" font-weight="normal">~</tspan>
-        <tspan x="875" y="90" fill="#3b4261" fill-opacity="0.18" font-weight="normal">]</tspan>
-        <tspan x="875" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">A</tspan>
-        <tspan x="875" y="126" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">[</tspan>
-        <tspan x="875" y="144" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">9</tspan>
-        <tspan x="875" y="162" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">Z</tspan>
-        <tspan x="875" y="180" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">}</tspan>
-        <tspan x="875" y="198" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Z</tspan>
-        <tspan x="875" y="216" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">7</tspan>
-        <tspan x="875" y="234" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">(</tspan>
-        <tspan x="875" y="252" fill="#ffffff" fill-opacity="0.9" font-weight="bold">)</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.32s" begin="-0.76s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="921" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">(</tspan>
-        <tspan x="921" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">Z</tspan>
-        <tspan x="921" y="36" fill="#3b4261" fill-opacity="0.18" font-weight="normal">{</tspan>
-        <tspan x="921" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">/</tspan>
-        <tspan x="921" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">)</tspan>
-        <tspan x="921" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="921" y="108" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">F</tspan>
-        <tspan x="921" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="921" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
-        <tspan x="921" y="162" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">/</tspan>
-        <tspan x="921" y="180" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">%</tspan>
-        <tspan x="921" y="198" fill="#ffffff" fill-opacity="0.9" font-weight="bold">7</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="5.7s" begin="-3.24s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="968" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">0</tspan>
-        <tspan x="968" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">A</tspan>
-        <tspan x="968" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">(</tspan>
-        <tspan x="968" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">-</tspan>
-        <tspan x="968" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">{</tspan>
-        <tspan x="968" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">]</tspan>
-        <tspan x="968" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">~</tspan>
-        <tspan x="968" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">%</tspan>
-        <tspan x="968" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">@</tspan>
-        <tspan x="968" y="162" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">=</tspan>
-        <tspan x="968" y="180" fill="#ffffff" fill-opacity="0.9" font-weight="bold">Z</tspan>
-      </text>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 -300" to="0 580" dur="4.65s" begin="-2.16s" repeatCount="indefinite"/>
-      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" xml:space="preserve">
-        <tspan x="1015" y="0" fill="#3b4261" fill-opacity="0.18" font-weight="normal">}</tspan>
-        <tspan x="1015" y="18" fill="#3b4261" fill-opacity="0.18" font-weight="normal">~</tspan>
-        <tspan x="1015" y="36" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">=</tspan>
-        <tspan x="1015" y="54" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">*</tspan>
-        <tspan x="1015" y="72" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">%</tspan>
-        <tspan x="1015" y="90" fill="#bb9af7" fill-opacity="0.35" font-weight="normal">~</tspan>
-        <tspan x="1015" y="108" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">Y</tspan>
-        <tspan x="1015" y="126" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">F</tspan>
-        <tspan x="1015" y="144" fill="#7aa2f7" fill-opacity="0.55" font-weight="normal">+</tspan>
-        <tspan x="1015" y="162" fill="#7dcfff" fill-opacity="0.75" font-weight="bold">:</tspan>
-        <tspan x="1015" y="180" fill="#ffffff" fill-opacity="0.9" font-weight="bold">7</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 540" dur="4.67s" begin="-3.97s" repeatCount="indefinite"/>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" fill="#7aa2f7" xml:space="preserve">
+        <tspan x="1004" y="0">7</tspan>
+        <tspan x="1004" y="20">#</tspan>
+        <tspan x="1004" y="40">7</tspan>
+        <tspan x="1004" y="60">}</tspan>
+        <tspan x="1004" y="80">*</tspan>
+        <tspan x="1004" y="100">~</tspan>
+        <tspan x="1004" y="120">-</tspan>
+        <tspan x="1004" y="140">:</tspan>
+        <tspan x="1004" y="160">-</tspan>
+        <tspan x="1004" y="180">F</tspan>
+        <tspan x="1004" y="200">9</tspan>
       </text>
     </g>
     </g>
-    <!-- Translucent Dark Overlay for absolute readability -->
-    <rect x="5" y="42" width="1040" height="492" fill="#0b0e17" fill-opacity="0.76"/>
+    <!-- Readability scrim -->
+    <rect x="5" y="42" width="1040" height="472" fill="#090d16" fill-opacity="0.75"/>
   </g>
 
   <!-- Title Bar -->
-  <path d="M 4 18 C 4 10.268 10.268 4 18 4 L 1032 4 C 1039.732 4 1046 10.268 1046 18 L 1046 42 L 4 42 Z" fill="#131722"/>
-  <line x1="4" y1="42" x2="1046" y2="42" stroke="#222838" stroke-width="1"/>
+  <path d="M 4 18 C 4 10.268 10.268 4 18 4 L 1032 4 C 1039.732 4 1046 10.268 1046 18 L 1046 42 L 4 42 Z" fill="#111624"/>
+  <line x1="4" y1="42" x2="1046" y2="42" stroke="#232a3d" stroke-width="1"/>
 
-  <!-- Traffic Light Window Controls -->
-  <circle cx="26" cy="23" r="6" fill="#f7768e"/>
-  <circle cx="46" cy="23" r="6" fill="#e0af68"/>
-  <circle cx="66" cy="23" r="6" fill="#9ece6a"/>
+  <!-- Traffic Light Window Buttons -->
+  <circle cx="26" cy="23" r="6" fill="#f72585"/>
+  <circle cx="46" cy="23" r="6" fill="#ffb703"/>
+  <circle cx="66" cy="23" r="6" fill="#00f0ff"/>
 
-  <!-- Window Title -->
-  <g class="mono" font-size="12" fill="#787c99">
-    <text x="525" y="27" text-anchor="middle">nyzeep@workbench: ~</text>
-    <circle cx="985" cy="24" r="4.5" fill="#7dcfff">
-          <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-        </circle>
-    <text x="996" y="27" font-size="11" fill="#7dcfff" font-weight="600">ONLINE</text>
+  <!-- Title Text -->
+  <g class="mono" font-size="12">
+    <text x="525" y="27" text-anchor="middle" class="hdr-title">nyzeep@workbench: ~</text>
+    <circle cx="985" cy="23" r="4.5" fill="#00f0ff">
+      
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    
+    </circle>
+    <text x="996" y="27" font-size="11" fill="#00f0ff" font-weight="700">ONLINE</text>
   </g>
 
-  <!-- Terminal Content Canvas -->
-  <g transform="translate(36, 72)" class="mono">
+  <!-- Terminal Body Canvas -->
+  <g transform="translate(40, 72)" class="mono">
 
     <!-- Shell Execution Line -->
     <text y="0" font-size="14" xml:space="preserve">
-      <tspan fill="#7dcfff" font-weight="700">nyzeep</tspan>
+      <tspan fill="#00f0ff" font-weight="700">nyzeep</tspan>
       <tspan fill="#565f89">@</tspan>
-      <tspan fill="#bb9af7" font-weight="600">workbench</tspan>
+      <tspan fill="#b5179e" font-weight="600">workbench</tspan>
       <tspan fill="#565f89"> in </tspan>
-      <tspan fill="#7aa2f7">~</tspan>
-      <tspan fill="#7dcfff" font-weight="700"> ❯ </tspan>
+      <tspan fill="#4361ee">~</tspan>
+      <tspan fill="#00f0ff" font-weight="700"> ❯ </tspan>
       <tspan fill="#f0f6fc">fastfetch</tspan>
     </text>
 
-    <!-- Visual Anchor: TUI Username Banner -->
+    <!-- Visual Anchor: Dynamic Flowing Chromatic TUI Banner -->
     <g transform="translate(0, 16)">
-      <text font-size="14" fill="url(#tui-grad)" font-weight="900" filter="url(#neon-glow)" xml:space="preserve">
+      <text font-size="14" fill="url(#chroma-flow)" font-weight="900" filter="url(#chroma-glow)" xml:space="preserve">
         <tspan x="0" y="20">███╗   ██╗██╗   ██╗███████╗███████╗███████╗██████╗ </tspan>
         <tspan x="0" y="39">████╗  ██║╚██╗ ██╔╝╚══███╔╝██╔════╝██╔════╝██╔══██╗</tspan>
         <tspan x="0" y="58">██╔██╗ ██║ ╚████╔╝   ███╔╝ █████╗  █████╗  ██████╔╝</tspan>
@@ -522,43 +355,39 @@
         <tspan x="0" y="115">╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     </tspan>
       </text>
 
-      <!-- Clean Mission Badge on Right -->
-      <g transform="translate(540, 20)">
-        <rect width="438" height="92" rx="8" fill="url(#panel-card)" stroke="#28344e" stroke-width="1"/>
-        <line x1="0" y1="28" x2="438" y2="28" stroke="#28344e" stroke-width="1"/>
-        <text x="16" y="19" font-size="11" fill="#7dcfff" font-weight="700" letter-spacing="1">PROFILE // SUMMARY</text>
-        <circle cx="420" cy="14" r="3" fill="#7dcfff"/>
-
-        <text x="16" y="52" font-size="12.5" fill="#787c99">ROLE    :: <tspan fill="#c0caf5">AI Agent Tooling &amp; Open Source Explorer</tspan></text>
-        <text x="16" y="74" font-size="12.5" fill="#787c99">MOTTO   :: <tspan fill="#7dcfff">Make it useful, then make it delightful</tspan></text>
+      <!-- Clean Summary Tagline on the Right -->
+      <g transform="translate(540, 24)">
+        <rect width="430" height="84" rx="8" fill="url(#spec-box-bg)" stroke="#232a3d" stroke-width="1"/>
+        <text x="18" y="32" font-size="12" fill="#7000ff" font-weight="700" letter-spacing="1">DEVELOPER TELEMETRY // HALO-CORE</text>
+        <text x="18" y="54" font-size="12.5" fill="#8f9bb3">FOCUS :: <tspan fill="#f0f6fc">AI Agent Developer Tooling &amp; Verifiable DX</tspan></text>
+        <text x="18" y="72" font-size="12" fill="#8f9bb3">MOTTO :: <tspan fill="#00f0ff">Make it useful, then make it delightful</tspan></text>
       </g>
     </g>
 
-    <!-- Subtle Horizontal Divider -->
-    <line x1="0" y1="156" x2="978" y2="156" stroke="#222838" stroke-width="1" stroke-dasharray="5 4"/>
+    <!-- Clean Divider Line -->
+    <line x1="0" y1="152" x2="970" y2="152" stroke="#232a3d" stroke-width="1" stroke-dasharray="6 4"/>
 
-    <!-- Simplified, High-Signal 2-Panel Specifications -->
-    <g transform="translate(0, 178)">
-
-      <!-- Panel 1: System Environment (3 high-value rows) -->
+    <!-- Concise, Uncluttered Specifications (Zero filler, perfectly organized) -->
+    <g transform="translate(0, 172)">
+      <!-- Left Column: Platform & Runtime (3 clean rows) -->
       <g transform="translate(0, 0)">
-        <rect width="470" height="132" rx="8" fill="url(#panel-card)" stroke="#28344e" stroke-width="1"/>
-        <rect width="470" height="26" rx="8" fill="#131726"/>
-        <line x1="0" y1="26" x2="470" y2="26" stroke="#28344e" stroke-width="1"/>
-        <text x="16" y="18" class="panel-hdr">01 // PLATFORM &amp; RUNTIME</text>
+        <rect width="466" height="126" rx="8" fill="url(#spec-box-bg)" stroke="#232a3d" stroke-width="1"/>
+        <rect width="466" height="26" rx="8" fill="#131929"/>
+        <line x1="0" y1="26" x2="466" y2="26" stroke="#232a3d" stroke-width="1"/>
+        <text x="16" y="18" fill="#00f0ff" font-size="11.5" font-weight="700" letter-spacing="1">01 // PLATFORM &amp; RUNTIME</text>
 
-        <g transform="translate(16, 52)">
+        <g transform="translate(16, 48)">
           <text y="0" xml:space="preserve">
             <tspan class="key">OS</tspan>
             <tspan class="sep"> ─────── </tspan>
             <tspan class="val">Arch Linux x86_64</tspan>
           </text>
-          <text y="28" xml:space="preserve">
+          <text y="26" xml:space="preserve">
             <tspan class="key">Host</tspan>
             <tspan class="sep"> ───── </tspan>
             <tspan class="val">DeepSeek Harness Station</tspan>
           </text>
-          <text y="56" xml:space="preserve">
+          <text y="52" xml:space="preserve">
             <tspan class="key">Shell</tspan>
             <tspan class="sep"> ──── </tspan>
             <tspan class="val">zsh 5.9 + starship</tspan>
@@ -566,63 +395,63 @@
         </g>
       </g>
 
-      <!-- Panel 2: Stack & Featured Projects (3 high-value rows) -->
-      <g transform="translate(508, 0)">
-        <rect width="470" height="132" rx="8" fill="url(#panel-card)" stroke="#28344e" stroke-width="1"/>
-        <rect width="470" height="26" rx="8" fill="#131726"/>
-        <line x1="0" y1="26" x2="470" y2="26" stroke="#28344e" stroke-width="1"/>
-        <text x="16" y="18" class="panel-hdr">02 // STACK &amp; PROJECTS</text>
+      <!-- Right Column: Stack & Active Projects (3 clean rows) -->
+      <g transform="translate(504, 0)">
+        <rect width="466" height="126" rx="8" fill="url(#spec-box-bg)" stroke="#232a3d" stroke-width="1"/>
+        <rect width="466" height="26" rx="8" fill="#131929"/>
+        <line x1="0" y1="26" x2="466" y2="26" stroke="#232a3d" stroke-width="1"/>
+        <text x="16" y="18" fill="#f72585" font-size="11.5" font-weight="700" letter-spacing="1">02 // STACK &amp; PROJECTS</text>
 
-        <g transform="translate(16, 52)">
+        <g transform="translate(16, 48)">
           <text y="0" xml:space="preserve">
             <tspan class="key">Focus</tspan>
             <tspan class="sep"> ──── </tspan>
-            <tspan class="val-highlight">AI Agent Tooling</tspan>
-            <tspan class="val"> · Dev Experience</tspan>
+            <tspan class="val">AI Agent Tooling · Dev Experience</tspan>
           </text>
-          <text y="28" xml:space="preserve">
+          <text y="26" xml:space="preserve">
             <tspan class="key">Stack</tspan>
             <tspan class="sep"> ──── </tspan>
             <tspan class="val">Rust · TypeScript · Python · Vue</tspan>
           </text>
-          <text y="56" xml:space="preserve">
+          <text y="52" xml:space="preserve">
             <tspan class="key">Active</tspan>
             <tspan class="sep"> ─── </tspan>
             <tspan class="val-accent">Halo-Studio</tspan>
             <tspan class="sep"> · </tspan>
-            <tspan class="val">dsh-material-file-icons</tspan>
+            <tspan class="val-purple">dsh-material-file-icons</tspan>
           </text>
         </g>
       </g>
     </g>
 
-    <!-- Bottom Section: Tokyo Night Color Palette & Terminal Prompt -->
-    <g transform="translate(0, 344)">
-      <!-- 8 Tokyo Night Palette Blocks -->
+    <!-- Bottom Section: Color Palette & Realistic Shell Prompt Waiting for Input -->
+    <g transform="translate(0, 326)">
+      <!-- 8 Vibrant Chromatic Terminal Color Test Blocks -->
       <g transform="translate(0, 0)">
-        <rect x="0" y="0" width="46" height="14" rx="3" fill="#1f2335" stroke="#28344e" stroke-width="1"/>
-        <rect x="54" y="0" width="46" height="14" rx="3" fill="#f7768e"/>
-        <rect x="108" y="0" width="46" height="14" rx="3" fill="#9ece6a"/>
-        <rect x="162" y="0" width="46" height="14" rx="3" fill="#e0af68"/>
-        <rect x="216" y="0" width="46" height="14" rx="3" fill="#7aa2f7"/>
-        <rect x="270" y="0" width="46" height="14" rx="3" fill="#bb9af7"/>
-        <rect x="324" y="0" width="46" height="14" rx="3" fill="#7dcfff"/>
-        <rect x="378" y="0" width="46" height="14" rx="3" fill="#c0caf5"/>
+        <rect x="0" y="0" width="46" height="13" rx="3" fill="#141a2b" stroke="#232a3d" stroke-width="1"/>
+        <rect x="54" y="0" width="46" height="13" rx="3" fill="#f72585"/>
+        <rect x="108" y="0" width="46" height="13" rx="3" fill="#ffb703"/>
+        <rect x="162" y="0" width="46" height="13" rx="3" fill="#00f0ff"/>
+        <rect x="216" y="0" width="46" height="13" rx="3" fill="#4361ee"/>
+        <rect x="270" y="0" width="46" height="13" rx="3" fill="#7000ff"/>
+        <rect x="324" y="0" width="46" height="13" rx="3" fill="#b5179e"/>
+        <rect x="378" y="0" width="46" height="13" rx="3" fill="#f0f6fc"/>
       </g>
 
-      <!-- Next Terminal Prompt Line with Blinking Cursor -->
-      <g transform="translate(0, 36)">
+      <!-- Clean Next Terminal Prompt Line Waiting for Input (NO childish fake commands) -->
+      <g transform="translate(0, 34)">
         <text font-size="14" xml:space="preserve">
-          <tspan fill="#7dcfff" font-weight="700">nyzeep</tspan>
+          <tspan fill="#00f0ff" font-weight="700">nyzeep</tspan>
           <tspan fill="#565f89">@</tspan>
-          <tspan fill="#bb9af7" font-weight="600">workbench</tspan>
+          <tspan fill="#b5179e" font-weight="600">workbench</tspan>
           <tspan fill="#565f89"> in </tspan>
-          <tspan fill="#7aa2f7">~</tspan>
-          <tspan fill="#7dcfff" font-weight="700"> ❯ </tspan>
-          <tspan fill="#c0caf5">cat profile.json</tspan>
+          <tspan fill="#4361ee">~</tspan>
+          <tspan fill="#00f0ff" font-weight="700"> ❯ </tspan>
         </text>
-        <rect x="235" y="-13" width="9" height="17" fill="#7dcfff">
-          <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
+        <rect x="156" y="-13" width="9" height="17" fill="#00f0ff">
+          
+      <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
+    
         </rect>
       </g>
     </g>
