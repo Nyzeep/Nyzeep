@@ -4,3 +4,11 @@
 # Windows
 Thumbs.db
 Desktop.ini
+
+# Archives
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class

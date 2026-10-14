@@ -1,21 +1,41 @@
 # Nyzeep 公开作品组合：来源证据
 
-本文记录主页精选项目与技术标签的可审计依据。数据来自 GitHub REST API 的公开仓库元数据、语言端点、根目录清单与仓库 README；不把 fork 仓库作为 Nyzeep 的原创能力证据。
+本文记录主页精选项目与技术标签的可审计依据，区分本轮核实结论与旧方案的历史采样；不把 fork 仓库作为 Nyzeep 的原创能力证据。
 
-## 证据采集范围
+## 2026-10-13 核实注记与当前决策
 
-- Halo-Studio：仓库元数据、语言分布、根目录、README。
-- dsh-material-file-icons：仓库元数据、许可证、语言分布、根目录、README。
-- Ecoscout 与 LumiMate：仓库元数据和语言分布，用于主页中的轻量探索链接。
+本节依据本轮在线事实核实 agent 的结果补记，证据由主代理转交；下方旧语言数据与 README 摘录未在本次全部重新采集。当前展示范围对应 [ZIP 工业风格实现决策](profile-redesign-decisions.md)。
 
-## 精选项目
+- Halo-Studio 的仓库元数据返回 `private: true`、`visibility: private`，且未出现在 `users/Nyzeep/repos` 的公开列表中。此次仅核实可见性，未读取私有内容。它不再作为主页公开精选或当前公开能力证据；下方原有详情仅为历史记录。
+- 当前公开精选为下表四个项目。描述与状态只采用本轮已核实资料，不把开发中、预发布或依赖上游支持的功能写成已交付能力。
 
-### Halo-Studio
+| 当前公开项目 | 本轮核实来源与技术依据 | 展示边界 |
+| --- | --- | --- |
+| [Orchestella-Studio](https://github.com/Nyzeep/Orchestella-Studio) | 公开 README 与 Gradle 配置支持 Android、Kotlin、Linux。 | 项目仍在开发，已有 APK 发布；文档中的开发版本不等于最新发布版本。 |
+| [LumiMate](https://github.com/Nyzeep/LumiMate) | `ui/web/package.json` 支持 Vue、JavaScript；`ui/web/src-tauri/Cargo.toml` 支持 Rust、Tauri；Python 依赖清单支持 Python、FastAPI。 | 早期预发布，无发布附件；不描述为成熟交付产品。 |
+| [dsh-material-file-icons](https://github.com/Nyzeep/dsh-material-file-icons) | 公开 `package.json` 支持 TypeScript；项目 README 说明文件与目录图标扩展定位。 | npm 待发布，正常使用仍依赖上游提供 `fileIconProvider`。 |
+| [Ecoscout](https://github.com/Nyzeep/Ecoscout) | 公开依赖清单支持 Python、FastAPI；项目资料说明社区环卫检测定位。 | 缺少模型时可能回退演示，不把演示输出当作真实模型推理结果。 |
 
-- 公开仓库：[Nyzeep/Halo-Studio](https://github.com/Nyzeep/Halo-Studio)
-- API：<https://api.github.com/repos/Nyzeep/Halo-Studio>、<https://api.github.com/repos/Nyzeep/Halo-Studio/languages>
-- 仓库描述：集成主流ai agent的开发工作平台
-- 主页使用的表述“集成主流 AI Agent 的开发工作平台”直接来自该公开描述。
+当前技术 logo 清单为 TypeScript、Python、Rust、Vue、JavaScript、Tauri、Android、Kotlin、Linux、FastAPI、Git、GitHub。Git 与 GitHub 表达这些公开仓库的版本管理与托管入口；图标不代表熟练度评级。未核实的 Docker、Tailwind 不沿用，当前技术选择也不再依赖 Halo-Studio 的历史内容。
+
+## 历史证据采集范围
+
+以下各节保留新需求之前的公开采样与旧主页文案映射，不作为当前仓库可见性、版本或能力的重新证明。
+
+- Halo-Studio：历史仓库元数据、语言分布、根目录、README；当前已私有。
+- dsh-material-file-icons：当时的仓库元数据、许可证、语言分布、根目录、README。
+- Ecoscout 与 LumiMate：当时的仓库元数据和语言分布，用于旧主页中的轻量探索链接。
+
+## 历史精选项目
+
+### Halo-Studio（历史记录，当前已私有）
+
+本节仅保留原有公开采样，不包含本轮私有内容读取；不用于当前主页介绍或技术能力声明。
+
+- 历史仓库入口：[Nyzeep/Halo-Studio](https://github.com/Nyzeep/Halo-Studio)（当前不再是公开项目入口）
+- 历史采样 API：<https://api.github.com/repos/Nyzeep/Halo-Studio>、<https://api.github.com/repos/Nyzeep/Halo-Studio/languages>
+- 当时的仓库描述：集成主流ai agent的开发工作平台
+- 旧主页的表述“集成主流 AI Agent 的开发工作平台”来自当时的公开描述。
 - 语言端点（字节）：
 
 ~~~json
@@ -196,7 +216,7 @@ mappings, 1,377 extension mappings, and 4,654 folder mappings.
 | A future re
 ~~~
 
-## 探索性作品
+## 历史探索性作品
 
 ### Ecoscout
 
@@ -224,9 +244,11 @@ mappings, 1,377 extension mappings, and 4,654 folder mappings.
 
 主页保留其公开描述所表达的“伙伴式软件实验”定位，不额外推断产品架构。
 
-## 技术标签映射
+## 历史技术标签映射
 
-| 主页技术或方向 | 可审计来源 |
+以下是旧主页的对应关系，其中依赖 Halo-Studio 的条目已失去当前公开展示的依据；现行技术清单以本文开头的 2026-10-13 注记为准。
+
+| 旧主页技术或方向 | 当时的来源 |
 | --- | --- |
 | Rust、TypeScript | Halo-Studio 语言端点；TypeScript 也由 dsh-material-file-icons 语言端点支撑。 |
 | Python、Vue、JavaScript、CSS | LumiMate 语言端点；Python 也由 Halo-Studio 与 Ecoscout 语言端点支撑。 |
@@ -235,9 +257,11 @@ mappings, 1,377 extension mappings, and 4,654 folder mappings.
 | DeepSeek Harness 扩展 / 开发者体验 | dsh-material-file-icons 的公开描述与 README。 |
 | 社区环卫检测 | Ecoscout 的公开仓库描述。 |
 
-## 主页构建路线文案映射
+## 历史主页构建路线文案映射
 
-| README 路线 | 可审计来源 | 采用边界 |
+本表保留旧文案来源；Halo-Studio 相关路线不用于当前公开主页。
+
+| 旧 README 路线 | 当时的来源 | 当时的采用边界 |
 | --- | --- | --- |
 | “受管编码任务、任务基线与交付证据” | Halo-Studio README 开头摘录：本地开发工作台、受管编码任务、任务基线与交付证据。 | 不把尚未发布的能力写成已完成的产品承诺。 |
 | “Files 树的 Material 风格文件与目录图标” | dsh-material-file-icons 的公开描述与 README 摘录。 | 表述为扩展定位，不承诺特定版本一定已自动安装。 |
@@ -245,6 +269,6 @@ mappings, 1,377 extension mappings, and 4,654 folder mappings.
 
 ## 主页维护边界
 
-- 只有这里有来源的项目描述和技术标签才能留在主页核心区。
-- GitHub Top Languages 卡是公开代码语言分布，不是技能或熟练度声明。
-- 若某个项目描述、许可证或技术栈发生变化，应同步更新主页卡片和本证据档。
+- 主页核心区仅采用仍公开、且有当前核实依据的项目描述和技术标签；历史采样不能覆盖仓库已转为私有等新事实。
+- GitHub Top Languages 卡反映公开代码语言分布，不是技能或熟练度声明；当前方案已移除第三方大统计卡。
+- 若项目可见性、描述、许可证或技术栈发生变化，应同步更新主页、[实现决策](profile-redesign-decisions.md)和本证据档。

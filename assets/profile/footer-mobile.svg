@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="105" viewBox="0 0 400 105" role="img" aria-labelledby="title desc">
+<title id="title">Always curious. Always building.</title>
+<desc id="desc">Find Nyzeep on GitHub.</desc>
+<rect x="1" y="1" width="398" height="103" fill="#121316" stroke="#F5F4F0" stroke-width="2"/><rect x="1" y="1" width="5" height="103" fill="#D62828"/><rect x="20" y="20" width="10" height="10" fill="#D62828"/><rect x="37" y="20" width="10" height="10" fill="#FDBB24"/><rect x="54" y="20" width="10" height="10" fill="#F5F4F0"/><text x="20" y="57" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="19" font-weight="700" fill="#F5F4F0" >ALWAYS CURIOUS.</text><text x="20" y="83" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="19" font-weight="700" fill="#F5F4F0" >ALWAYS BUILDING.</text><path d="M363 82l12 -12m-11 0h11v11" fill="none" stroke="#F5F4F0" stroke-width="2"/>
+</svg>
